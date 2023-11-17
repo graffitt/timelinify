@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- <link rel="stylesheet" href="./css/vis-timeline-graph2d.min.css" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>timelinify</title>
+    <!-- <script src="./js/libs/jquery-3.7.0.min.js"></script>
+    <script src="./js/libs/moment-2.29.4.min.js"></script>
+    <script src="./js/libs/unix-to-hms.js"></script>
+    <script src="./js/libs/sha256.min.js"></script> -->
+
+    <!-- <script src="./js/libs/vis-timeline-graph2d.min.js"></script>
+    <script src="./js/timeline.js"></script> -->
+
+    <script src="./js/init_file_structure.js"></script>
+    <!-- <script src="./js/libs/_libs.js"></script> -->
+    <script src="./js/libs/_libs_bundle.js"></script>
+    <!-- <script type="module" src="./js/_main.js" defer></script> -->
+    <script type="module" src="./js/main.js" defer></script>
+    <!-- <script type="module" src="./js/bundle.js" defer></script> -->
+  </head>
+
+  <body>
+    <div id="mytimeline"></div>
+    <div id="tabs_container">
+        <div id="apps_tab" class="tab">
+            <div id="tool_bar">
+                <div id="sort_box"></div>
+                <input type="text" id="search_box" placeholder="search">
+            </div>
+            <div id="apps_container">
+                <button id="app_new" class="app_card">+</button>
+                <button temp id="calc" class="app_card">calc</button>
+                <button temp id="open" class="app_card">open</button>
+            </div>
+        </div>
+        <div id="settings_tab" class="tab" style="visibility: hidden"></div>
+    </div>
+  </body>
+</html>

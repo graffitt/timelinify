@@ -1,0 +1,73 @@
+l
+    color color-3
+    padding 0 2px
+
+#app_info_tab
+    display flex
+    flex-direction column
+    gap 20px
+    // flex-wrap wrap
+    // align-content space-between
+    padding 10px
+
+    & header
+        width 100%
+        text-align center
+        font-size 20px
+        font-weight 500
+
+    & footer
+        margin-top auto
+        width 100%
+        text-align center
+
+    & main
+        display flex
+        // flex-wrap wrap
+        // align-content space-between
+
+.column
+    height 100%
+
+.icon_column
+    width 30%
+    min-width 30%
+    text-align center
+
+.text_column
+    padding-right 50px
+
+.app_info_tab_icon
+    aspect-ratio 1
+    width 100px
+    height 100px
+
+    max-width 100px
+    max-height 100px
+
+    border-radius border-radius-5
+
+.line
+    // display inline-block
+    display inline-flex
+    margin 2px 0
+
+    &:first-of-type
+        margin-top 0
+
+    &:last-of-type
+        margin-bottom 0
+
+    & .key
+        flex-shrink 0
+        width 120px
+        color color-3
+
+    & .value
+        font-family Roboto_Mono, SF Mono, monospace
+        font-size 13px
+        line-break anywhere
+        user-select all
+
+#app_info_tab_close
+    width 100px

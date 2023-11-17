@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timelinify</title>
+
+    <link rel="stylesheet" href="./css/_bundle.css">
+    <script type="module" src="./js/_bundle.js" defer></script>
+</head>
+
+<body>
+    <div id="mytimeline"></div>
+    <div id="dialogs_container">
+        <div id="app_confirm_dialog" class="dialog" style="display: none"></div>
+        <div id="last_session_dialog" class="dialog" style="display: none"></div>
+    </div>
+    <div id="tabs_container">
+        <div id="apps_tab" class="tab">
+            <div id="tool_bar">
+                <div id="sort_box" style="display: none"></div>
+                <button id="settings">⚙</button>
+                <button temp id="apps_save">💾</button>
+                <button temp id="calc">calc duration</button>
+                <button temp id="open">validate paths</button>
+                <input type="text" id="search_box" placeholder="search" role="search" autocomplete="off" spellcheck="false">
+            </div>
+            <div id="apps_container">
+                <button id="app_new" class="app_card service">+</button>
+            </div>
+        </div>
+        <div id="app_info_tab" class="tab" style="display: none"></div>
+        <div id="app_edit_tab" class="tab" style="display: none"></div>
+        <div id="settings_tab" class="tab" style="display: none"></div>
+    </div>
+</body>
+</html>

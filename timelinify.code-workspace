@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+        "files.exclude": {
+            // "release/": true
+        },
+        "search.exclude": {
+            "node_modules/": true,
+            "release/": true,
+            "corrections/": true
+        },
+        "printtimestamp.timestampformat": "YYYY-MM-DDTHH:mm:ssZ"
+    }
+}

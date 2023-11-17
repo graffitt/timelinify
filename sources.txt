@@ -1,0 +1,34 @@
+timeline
+    https://github.com/visjs/vis-timeline
+    https://codepen.io/pedropxm/pen/BojXMw
+
+mica window
+    https://github.com/tauri-apps/tauri/discussions/4747
+
+https://profpatsch.de/notes/rust-string-conversions
+https://www.reddit.com/r/tauri/comments/11adbst/path_to_current_executables_directory/?rdt=41317
+https://onelinerhub.com/rust/how-do-i-use-a-variable-from-another-file-in-rust
+
+Rename the processes in Taskmanager
+    https://github.com/tauri-apps/tauri/issues/1849
+
+https://morestina.net/blog/1774/rust-global-variables-demystified
+
+reg exp online
+    https://regex101.com
+
+ui library
+    https://vanillajstoolkit.com/libraries
+    https://shoelace.style/components/select
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_fonts/Variable_fonts_guide
+
+license
+    https://choosealicense.com/licenses
+
+ico creator
+    https://redketchup.io/icon-converter
+
+exe viewer
+    https://exe.urih.com
+    https://speedtesting.herokuapp.com/peviewer
