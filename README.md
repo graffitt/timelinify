@@ -1,6 +1,6 @@
 # timelinify
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Javascript.
+An app to track usage time of apps (mostly games) with session details
 
 ## Recommended IDE Setup
 
