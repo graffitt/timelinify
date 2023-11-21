@@ -1,6 +1,8 @@
 node_modules
 *.lnk
 
+release
+design
 apps_template.json
 icons.txt
 regexp.txt
