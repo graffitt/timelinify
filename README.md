@@ -14,3 +14,8 @@ If you wish to run a development build of **timelinify**:
 - Install [`Rust`](https://www.rust-lang.org/tools/install)
 - Run **gulp** task `release`
 - Run `npm run tauri build` to build an executable or `npm run tauri dev` to run a development build
+
+## Thanks
+- [jQuery](https://github.com/jquery/jquery)
+- [Fuse.js](https://github.com/krisk/fuse)
+- [vis-timeline](https://github.com/visjs/vis-timeline)
