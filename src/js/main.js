@@ -64,10 +64,7 @@ const app_calc_usage_time = () => {
         // if(app.sessions.length > 0){
         let temp = 0
         app.sessions.forEach(session => {
-            // temp += moment(session.end).diff(session.start) / 1000
             temp += (new Date(session.end) - new Date(session.start)) / 1000
-            // console.warn(unix_to_hms(moment(session.end).diff(session.start) / 1000))
-            // console.warn(unix_to_hms((new Date(session.end) - new Date(session.start)) / 1000))
         })
         app.usage_time_s = temp
         $(`.app_card[data-id='${app.id}']`).find('.app_usage_time').text(unix_to_hms(app.usage_time_s, 0, false))
