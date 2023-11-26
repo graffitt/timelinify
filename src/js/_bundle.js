@@ -3,6 +3,7 @@
 //=require ./libs/to-iso-string.js
 //=require ./libs/is_today.js
 //=require ./libs/sha256.min.js
+//=require ./libs/fuze-7.0.0.js
 //require ./libs/vis-timeline-graph2d.min.js
 //--libs-end---------------------------
 
