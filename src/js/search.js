@@ -20,7 +20,7 @@ const apps_search = (term) => {
             return `.app_card[data-id*="${item.item.id}"]`
         })
 
-        $('.app_card').not(result.join(',')).not('.app_card.service').hide()
+        $('.app_card').not(result.join(',')).not('#app_new').hide()
         $(result.join(',')).show()
     }
     else{
