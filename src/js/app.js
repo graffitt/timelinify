@@ -1,14 +1,14 @@
 const add_new_app = async (app = {}, startup = false) => {
     // create elements at startup without creating ui elements and file saving
-    const {id, name, display_name, usage_time_s} = app
+    const {id, name, display_name, target_file, usage_time_s} = app
     let {icon} = app
 
     if(!APPS.active.some(i => i.name === name) || startup){
 
-        if(!icon.startsWith('http')){
+        if(!icon.startsWith('http') && await invoke('has_icon', {exe_path: target_file})){
             icon = convertFileSrc(ICON_PATH + `${id}.ico`)
+            app.icon = `${id}.ico`
         }
-        app.icon = `${id}.ico`
 
         !startup ? APPS.active.push(app) : undefined
 

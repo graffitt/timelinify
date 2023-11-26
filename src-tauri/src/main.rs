@@ -17,7 +17,7 @@ pub mod run;
 use run::run_app;
 
 pub mod exe_icon;
-use exe_icon::{get_exe_icon, delete_icon, delete_unnecessary_icons};
+use exe_icon::{has_icon, get_exe_icon, delete_icon, delete_unnecessary_icons};
 
 fn choose_file() -> Option<PathBuf>{
     FileDialog::new()
@@ -83,6 +83,7 @@ fn main(){
             // open_explorer,
             add_new_app,
             run_app,
+            has_icon,
             get_exe_icon,
             delete_icon,
             delete_unnecessary_icons

@@ -3,10 +3,24 @@ use std::fs;
 use std::path::PathBuf;
 
 #[tauri::command(rename_all = "snake_case")]
+pub fn has_icon(exe_path: String) -> bool{
+    let pe = VecPE::from_disk_file(exe_path).unwrap();
+
+    let _rsrc = match ResourceDirectory::parse(&pe){
+        Ok(_) => return true,
+        Err(_error) => return false
+    };
+}
+
+#[tauri::command(rename_all = "snake_case")]
 pub fn get_exe_icon(exe_path: String, icon_name: String){
     // https://github.com/frank2/exe-rs/blob/main/examples/resources/src/main.rs
     let pe = VecPE::from_disk_file(exe_path).unwrap();
-    let rsrc = ResourceDirectory::parse(&pe).unwrap();
+    // let rsrc = ResourceDirectory::parse(&pe).unwrap();
+    let rsrc = match ResourceDirectory::parse(&pe){
+        Ok(_) => ResourceDirectory::parse(&pe).unwrap(),
+        Err(_error) => return
+    };
     let icons = rsrc.icon_groups_single(&pe).unwrap();
 
     for (_id, dir) in &icons {
