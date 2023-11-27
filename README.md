@@ -14,7 +14,7 @@ If you wish to run a development build of **timelinify**:
 - Install [`Rust`](https://www.rust-lang.org/tools/install)
 - Run `npm install` to install **node** dependencies
 - Run `cargo fetch` to install **rust** dependencies
-- Execute the instructions from the `exe_icon!!!.txt` file
+- Execute the instructions from the [`exe_icon!!!.txt`](https://github.com/graffitt/timelinify/blob/main/exe_icon!!!.txt) file
 - Run `gulp release`
 - Run `npm run tauri build` to build an executable or `npm run tauri dev` to run a development build
 
