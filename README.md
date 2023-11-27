@@ -15,7 +15,7 @@ If you wish to run a development build of **timelinify**:
 - Run `npm install` to install **node** dependencies
 - Run `cargo fetch` to install **rust** dependencies
 - Execute the instructions from the [`exe_icon!!!.txt`](./exe_icon!!!.txt) file
-- Run `gulp release`
+- Run `gulp release` to build front page
 - Run `npm run tauri build` to build an executable or `npm run tauri dev` to run a development build
 
 ## Thanks
