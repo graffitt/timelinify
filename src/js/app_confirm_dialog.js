@@ -1,8 +1,8 @@
 const app_confirm_dialog = async (app, message_type = -1) => {
-    const {display_name} = app
+    const {display_name, target_file} = app
     let {icon} = app
 
-    if(!icon.startsWith('http')){
+    if(!icon.startsWith('http') && await invoke('has_icon', {exe_path: target_file})){
         icon = convertFileSrc(ICON_PATH + icon)
     }
 
@@ -29,7 +29,7 @@ const app_confirm_dialog = async (app, message_type = -1) => {
     $('#app_confirm_dialog').html(/*html*/`
         <header>${header}</header>
         <div class="app_confirm_dialog_text_container">
-            <img src="${icon}" class="app_confirm_dialog_icon" onerror="this.src = './img/placeholder.png'">
+            <img src="${icon}" class="app_confirm_dialog_icon">
             <span>${message}</span>
         </div>
         <div class="app_confirm_dialog_buttons_container">
@@ -37,6 +37,10 @@ const app_confirm_dialog = async (app, message_type = -1) => {
             <button id="app_confirm_dialog_button_NO" class="app_confirm_dialog_button">No</button>
         </div>
     `)
+
+    $('.app_confirm_dialog_icon').on('error', (event) => {
+        $(event.target).attr('src', './img/placeholder.png')
+    })
 
     app_confirm_dialog_show()
 

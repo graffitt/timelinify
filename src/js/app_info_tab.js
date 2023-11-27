@@ -3,7 +3,7 @@ const format_slash = (string) => {
         .replaceAll('<l>/</l><l>/</l>', '<l>//</l>').replaceAll('<l>\\</l><l>\\</l>', '<l>\\\\</l>')
 }
 
-const app_info_tab = (app) => {
+const app_info_tab = async (app) => {
     let has_sessions = app.sessions.length > 0 ? true : false
     let today_sessions = []
     let today_usage_time = 0
@@ -19,7 +19,7 @@ const app_info_tab = (app) => {
 
     let {icon} = app
     let icon2 = icon
-    if(!icon.startsWith('http')){
+    if(!icon.startsWith('http') && await invoke('has_icon', {exe_path: app.target_file})){
         icon = convertFileSrc(ICON_PATH + icon)
     }
 
@@ -27,7 +27,7 @@ const app_info_tab = (app) => {
         <header>${app.display_name}</header>
         <main>
             <div class="icon_column column">
-            <img class="app_info_tab_icon" src="${icon}" onerror="this.src = './img/placeholder.png'">
+            <img class="app_info_tab_icon" src="${icon}">
             </div>
             <div class="text_column column">
                 <span class="line"><span class="key">Usage time</span> <span class="value">${unix_to_hms(app.usage_time_s, 1)} (${unix_to_hms(today_usage_time, 1)} today)</span></span><br>
@@ -43,6 +43,10 @@ const app_info_tab = (app) => {
             <button id="app_info_tab_close">Close</button>
         </footer>
     `)
+
+    $('.app_info_tab_icon').on('error', (event) => {
+        $(event.target).attr('src', './img/placeholder.png')
+    })
 
     $('#app_info_tab_close').on('click.close', () => {
         app_info_tab_hide()

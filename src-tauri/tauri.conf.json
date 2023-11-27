@@ -54,7 +54,7 @@
             ]
         },
         "security": {
-            "csp": "asset https://asset.localhost"
+            "csp": "img-src * 'self' asset: https://asset.localhost"
         },
         "windows": [
             {

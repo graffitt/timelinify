@@ -1,15 +1,15 @@
-const last_session_dialog = (app, run_data, duration) => {
-    const {display_name} = app
+const last_session_dialog = async (app, run_data, duration) => {
+    const {display_name, target_file} = app
     let {icon} = app
 
-    if(!icon.startsWith('http')){
+    if(!icon.startsWith('http') && await invoke('has_icon', {exe_path: target_file})){
         icon = convertFileSrc(ICON_PATH + icon)
     }
 
     $('#last_session_dialog').html(/*html*/`
         <header>Last session</header>
         <main class="app_confirm_dialog_text_container">
-            <img src="${icon}" class="app_confirm_dialog_icon" onerror="this.src = './img/placeholder.png'">
+            <img src="${icon}" class="app_confirm_dialog_icon">
             <div class="text_column column">
                 <span class="line"><span class="key">App</span> <span class="value">${display_name}</span></span><br>
                 <span class="line"><span class="key">Start</span> <span class="value">${iso_display(run_data.start, false)}</span></span><br>
@@ -21,6 +21,11 @@ const last_session_dialog = (app, run_data, duration) => {
             <button id="last_session_dialog_button_OK">Ok</span></button>
         </footer>
     `)
+
+    $('.app_confirm_dialog_icon').on('error', (event) => {
+        $(event.target).attr('src', './img/placeholder.png')
+    })
+
     console.log(`last session: ${display_name} - ${unix_to_hms(duration)}`)
 
     last_session_dialog_show()

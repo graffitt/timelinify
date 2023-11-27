@@ -17,7 +17,7 @@ const add_new_app = async (app = {}, startup = false) => {
         $('#app_new').before(/*html*/`
             <div class="app_card" data-id="${id}"">
                 <div class="app_icon_container app_inner_container">
-                    <img class="app_icon" src="${icon}" onerror="this.src = './img/placeholder.png'">
+                    <img class="app_icon" src="${icon}">
                 </div>
                 <div class="app_text_container app_inner_container">
                     <span class="app_title">${display_name}</span>
@@ -33,6 +33,10 @@ const add_new_app = async (app = {}, startup = false) => {
                 </div>
             </div>
         `)
+
+        $('.app_icon').on('error', (event) => {
+            $(event.target).attr('src', './img/placeholder.png')
+        })
 
         $('.app_run').off('click')
         $('.app_run').on('click', (event) => {app_run(event)})
