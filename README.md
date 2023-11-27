@@ -12,7 +12,10 @@ If you wish to run a development build of **timelinify**:
 - Download or clone
 - Install [`nodejs`](https://nodejs.org/en/download)
 - Install [`Rust`](https://www.rust-lang.org/tools/install)
-- Run **gulp** task `release`
+- Run `npm install` to install **node** dependencies
+- Run `cargo fetch` to install **rust** dependencies
+- Execute the instructions from the `exe_icon!!!.txt` file
+- Run `gulp release`
 - Run `npm run tauri build` to build an executable or `npm run tauri dev` to run a development build
 
 ## Thanks
