@@ -32,9 +32,9 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
     let id_list = []
     APPS.active.forEach(app => {add_new_app(app, true), id_list.push(app.id)})
 
-    invoke('delete_unnecessary_icons', {
-        existing_icons: id_list
-    })
+    // invoke('delete_unnecessary_icons', {
+    //     existing_icons: id_list
+    // })
 
     APPS_hash = Sha256.hash(JSON.stringify(APPS, null, 2))
     console.warn('active hash', APPS_hash)
