@@ -4,14 +4,14 @@
 use native_dialog::FileDialog;
 use std::path::Path;
 use std::path::PathBuf;
-use std::fs;
+// use std::fs;
 use chrono;
 use serde::{Serialize, Deserialize};
 use sha256::digest;
 // use std::process::Command;
 
 pub mod iso8601;
-use iso8601::{DT_FORMAT, iso8601};
+use iso8601::{DT_FORMAT/*, iso8601*/};
 
 pub mod run;
 use run::run_app;
@@ -36,8 +36,8 @@ pub struct App{
     target_file_name: String,
     tracking_started: String,
     tracking_ended: String,
-    date_created: String,
-    date_modified: String,
+    // date_created: String,
+    // date_modified: String,
     usage_time_s: u8,
     sessions: Vec<String>
 }
@@ -58,8 +58,8 @@ fn add_new_app() -> Option<String>{
                 target_file_name: Path::new(&path).file_name().unwrap().to_os_string().into_string().unwrap(),
                 tracking_started: chrono::offset::Local::now().format(DT_FORMAT).to_string(),
                 tracking_ended: String::from(""),
-                date_created: iso8601(&fs::metadata(Path::new(&path)).expect("").created().expect("")),
-                date_modified: iso8601(&fs::metadata(Path::new(&path)).expect("").modified().expect("")),
+                // date_created: iso8601(&fs::metadata(Path::new(&path)).expect("").created().expect("")),
+                // date_modified: iso8601(&fs::metadata(Path::new(&path)).expect("").modified().expect("")),
                 usage_time_s: 0,
                 sessions: vec![]
             };
