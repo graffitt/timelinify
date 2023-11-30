@@ -12,7 +12,8 @@ const add_new_app = async (app = {}, startup = false) => {
 
         !startup ? APPS.active.push(app) : undefined
 
-        // console.warn(convertFileSrc(`${await homeDir()}/.timelinify/icons/${id}.ico`))
+        let admin = await invoke('check_admin', {exe_path: target_file})
+        console.warn(admin)
 
         $('#app_new').before(/*html*/`
             <div class="app_card" data-id="${id}"">
@@ -20,11 +21,11 @@ const add_new_app = async (app = {}, startup = false) => {
                     <img class="app_icon" src="${icon}">
                 </div>
                 <div class="app_text_container app_inner_container">
-                    <span class="app_title">${display_name}</span>
+                    <span class="app_title" title="${display_name}">${display_name}</span>
                     <span class="app_usage_time">${unix_to_hms(usage_time_s, 0, false)}</span>
                 </div>
                 <div class="app_buttons_container app_inner_container">
-                    <button class="app_run" title="Run app">▶</button>
+                    <button class="app_run" title="Run app">${admin ? '⚠️' : '▶'}</button>
                     <div class="app_buttons_sub_container">
                         <button class="app_info" title="App info">🛈</button>
                         <button class="app_move" title="Move app to history">→</button>
@@ -38,8 +39,10 @@ const add_new_app = async (app = {}, startup = false) => {
             $(event.target).attr('src', './img/placeholder.png')
         })
 
-        $('.app_run').off('click')
-        $('.app_run').on('click', (event) => {app_run(event)})
+        if(!admin){
+            $('.app_run').off('click')
+            $('.app_run').on('click', (event) => {app_run(event)})
+        }
 
         $('.app_info').off('click')
         $('.app_info').on('click', (event) => {app_info($(event.target).parents('.app_card')[0].dataset.id, APPS.active)})

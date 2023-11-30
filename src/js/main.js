@@ -23,6 +23,11 @@ let APPS_hash = 0
 
 let HISTORY = []
 
+invoke('is_process_elevated').then(admin => {
+    if(admin){
+        console.error('admin')
+    }
+})
 // let apps_temp = await readTextFile('.timelinify/apps.json', file_options)
 
 readTextFile('.timelinify/apps.json', file_options).then(result => {
