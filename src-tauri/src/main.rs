@@ -19,6 +19,11 @@ use run::run_app;
 pub mod exe_icon;
 use exe_icon::{has_icon, get_exe_icon, delete_icon, delete_unnecessary_icons};
 
+pub mod admin;
+use admin::{check_admin, is_process_elevated};
+
+//-----------------------------------------------
+
 fn choose_file() -> Option<PathBuf>{
     FileDialog::new()
         .add_filter("Executable", &["exe"])
@@ -86,7 +91,9 @@ fn main(){
             has_icon,
             get_exe_icon,
             delete_icon,
-            delete_unnecessary_icons
+            delete_unnecessary_icons,
+            check_admin,
+            is_process_elevated
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
