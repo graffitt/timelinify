@@ -82,9 +82,9 @@ const app_delete = async (app_id, from = APPS.active) => {
         if(await app_confirm_dialog(from[deletable_app_index], 1)){
             from.splice(deletable_app_index, 1)// delete app from array
             $(`.app_card[data-id='${app_id}']`).remove()// delete UI element
-            // invoke('delete_icon', {
-            //     icon_name: app_id
-            // })// delete icon
+            invoke('delete_icon', {
+                icon_name: app_id
+            })// delete icon
 
             APPS_save()
             // console.warn(`App with id '${app_id}' has been deleted from '${from}'`)
