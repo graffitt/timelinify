@@ -22,3 +22,5 @@ If you wish to run a development build of **timelinify**:
 - [jQuery](https://github.com/jquery/jquery)
 - [Fuse.js](https://github.com/krisk/fuse)
 - [vis-timeline](https://github.com/visjs/vis-timeline)
+- [Inter](https://github.com/rsms/inter)
+- [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono)
