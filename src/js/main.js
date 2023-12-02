@@ -1,8 +1,13 @@
 const {invoke, convertFileSrc} = window.__TAURI__.tauri
 const {homeDir} = window.__TAURI__.path
-const {exit} = window.__TAURI__.process
 const {appWindow, PhysicalSize} = window.__TAURI__.window
+const {getVersion} = window.__TAURI__.app
+const {exit} = window.__TAURI__.process
 
+
+getVersion().then(version => {
+    console.warn(`timelinify v${version}`)
+})
 
 let HOME_DIR
 let ICON_PATH
