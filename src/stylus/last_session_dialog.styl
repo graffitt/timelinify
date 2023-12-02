@@ -1,5 +1,5 @@
 #last_session_dialog
-    padding 10px 20px
+    padding 10px
     width fit-content//400px
 
     & header
@@ -7,6 +7,7 @@
         font-size 20px
 
     & main
+        padding 0 10px
         display flex
         flex-direction row
         gap 20px
@@ -22,8 +23,15 @@
             overflow hidden
 
     & footer
+        display flex
+        justify-content center
+        gap 10px
         margin-top 20px
         text-align center
+
+        & button
+            // width 100px
+            width 50%
 
 
 .app_confirm_dialog_buttons_container
@@ -32,5 +40,5 @@
     margin-top 20px
     gap 10px
 
-#last_session_dialog_button_OK
-    width 100px
+// #last_session_dialog_button_OK
+//     width 100px

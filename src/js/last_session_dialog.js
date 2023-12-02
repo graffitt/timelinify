@@ -8,7 +8,7 @@ const last_session_dialog = async (app, run_data, duration) => {
 
     $('#last_session_dialog').html(/*html*/`
         <header>Last session</header>
-        <main class="app_confirm_dialog_text_container">
+        <main>
             <img src="${icon}" class="app_confirm_dialog_icon">
             <div class="text_column column">
                 <span class="line"><span class="key">App</span> <span class="value">${display_name}</span></span><br>
@@ -19,6 +19,7 @@ const last_session_dialog = async (app, run_data, duration) => {
         </main>
         <footer>
             <button id="last_session_dialog_button_OK">Ok</span></button>
+            <button id="last_session_dialog_button_Ignore">Ignore</span></button>
         </footer>
     `)
 
@@ -26,7 +27,16 @@ const last_session_dialog = async (app, run_data, duration) => {
         $(event.target).attr('src', './img/placeholder.png')
     })
 
-    console.log(`last session: ${display_name} - ${unix_to_hms(duration)}`)
+    $('#last_session_dialog_button_OK, #last_session_dialog_button_Ignore').on('click.dialog_hide', () => {
+        last_session_dialog_hide()
+    })
+
+    $('#last_session_dialog_button_Ignore').on('click', () => {
+        // app.sessions.splice(-1, 1)
+        // APPS_save()
+    })
+
+    console.log(`last session: ${display_name} - ${unix_to_hms(duration, 1)}`)
 
     last_session_dialog_show()
 }
@@ -35,13 +45,10 @@ const last_session_dialog_show = () => {
     $('#last_session_dialog').css('display', 'flex')
     $('#dialogs_container').css('display', 'grid')
 
-    $('#last_session_dialog_button_OK').on('click.dialog_hide', () => {
-        last_session_dialog_hide()
-    })
-
     $(window).on('keydown.dialog_hide', (e) => {
         if(e.key === 'Enter' || e.key === 'Escape'){
-            $('#last_session_dialog_button_OK').trigger('click')
+            // $('#last_session_dialog_button_OK').trigger('click')
+            last_session_dialog_hide()
         }
     })
 }
@@ -50,6 +57,6 @@ const last_session_dialog_hide = () => {
     $('#last_session_dialog').css('display', 'none')
     $('#last_session_dialog').empty()
 
-    $('#last_session_dialog_button_OK').off('click')
+    $('#last_session_dialog_button_OK, last_session_dialog_button_Ignore').off('click')
     $(window).off('keydown.dialog_hide')
 }
