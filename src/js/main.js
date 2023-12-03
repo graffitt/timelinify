@@ -6,6 +6,7 @@ const {exit} = window.__TAURI__.process
 
 
 getVersion().then(version => {
+    $('#version').text(version)
     console.warn(`timelinify v${version}`)
 })
 
