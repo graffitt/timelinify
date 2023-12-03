@@ -2,8 +2,19 @@ const last_session_dialog = async (app, run_data, duration) => {
     const {display_name, target_file} = app
     let {icon} = app
 
+
     if(!icon.startsWith('http') && await invoke('has_icon', {exe_path: target_file})){
         icon = convertFileSrc(ICON_PATH + icon)
+    }
+
+    let duration_ignore_max = 300// seconds
+    let ignore_button
+
+    if(duration < duration_ignore_max){
+        ignore_button = '<button id="last_session_dialog_button_Ignore">Ignore</span></button>'
+    }
+    else{
+        ignore_button = ''
     }
 
     $('#last_session_dialog').html(/*html*/`
@@ -19,7 +30,7 @@ const last_session_dialog = async (app, run_data, duration) => {
         </main>
         <footer>
             <button id="last_session_dialog_button_OK">Ok</span></button>
-            <button id="last_session_dialog_button_Ignore">Ignore</span></button>
+            ${ignore_button}
         </footer>
     `)
 
