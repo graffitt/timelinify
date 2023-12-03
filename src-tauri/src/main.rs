@@ -81,6 +81,7 @@ fn add_new_app() -> Option<String>{
 //         .spawn( )
 //         .unwrap( );
 // }
+
 // rust-analyzer type hints
 fn main(){
     tauri::Builder::default()
@@ -88,10 +89,12 @@ fn main(){
             // open_explorer,
             add_new_app,
             run_app,
+
             has_icon,
             get_exe_icon,
             delete_icon,
             delete_unnecessary_icons,
+
             check_admin,
             is_process_elevated
         ])
