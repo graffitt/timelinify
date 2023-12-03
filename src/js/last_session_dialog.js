@@ -32,7 +32,7 @@ const last_session_dialog = async (app, run_data, duration) => {
             <button id="last_session_dialog_button_OK">Ok</span></button>
             ${ignore_button}
         </footer>
-    `)//gpg test
+    `)
 
     $('.app_confirm_dialog_icon').on('error', (event) => {
         $(event.target).attr('src', './img/placeholder.png')
