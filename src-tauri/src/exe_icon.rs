@@ -3,13 +3,19 @@ use std::fs;
 use std::path::PathBuf;
 
 #[tauri::command(rename_all = "snake_case")]
-pub fn has_icon(exe_path: String) -> bool{
-    let pe = VecPE::from_disk_file(exe_path).unwrap();
+pub fn exe_has_icon(exe_path: String) -> bool{
+    let path = PathBuf::from(&exe_path);
+    if path.exists(){
+        let pe = VecPE::from_disk_file(exe_path).unwrap();
 
-    let _rsrc = match ResourceDirectory::parse(&pe){
-        Ok(_) => return true,
-        Err(_error) => return false
-    };
+        let _rsrc = match ResourceDirectory::parse(&pe){
+            Ok(_) => return true,
+            Err(_error) => return false
+        };
+    }
+    else {
+        return false
+    }
 }
 
 #[tauri::command(rename_all = "snake_case")]

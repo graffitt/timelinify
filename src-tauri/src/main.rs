@@ -17,7 +17,7 @@ pub mod run;
 use run::run_app;
 
 pub mod exe_icon;
-use exe_icon::{has_icon, get_exe_icon, delete_icon, delete_unnecessary_icons};
+use exe_icon::*;
 
 pub mod admin;
 use admin::{check_admin, is_process_elevated};
@@ -90,7 +90,7 @@ fn main(){
             add_new_app,
             run_app,
 
-            has_icon,
+            exe_has_icon,
             get_exe_icon,
             delete_icon,
             delete_unnecessary_icons,
