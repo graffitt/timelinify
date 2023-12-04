@@ -1,8 +1,8 @@
 const app_confirm_dialog = async (app, message_type = -1) => {
-    const {display_name, target_file} = app
+    const {id, display_name} = app
     let {icon} = app
 
-    if(!icon.startsWith('http') && await invoke('has_icon', {exe_path: target_file})){
+    if(!icon.startsWith('http') && await exists(`.timelinify/icons/${id}.ico`, file_options)){
         icon = convertFileSrc(ICON_PATH + icon)
     }
 

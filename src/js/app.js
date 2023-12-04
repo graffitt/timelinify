@@ -5,7 +5,7 @@ const add_new_app = async (app = {}, startup = false) => {
 
     if(!APPS.active.some(i => i.name === name) || startup){
 
-        if(!icon.startsWith('http') && await invoke('has_icon', {exe_path: target_file})){
+        if(!icon.startsWith('http') && await exists(`.timelinify/icons/${id}.ico`, file_options)){
             icon = convertFileSrc(ICON_PATH + `${id}.ico`)
             app.icon = `${id}.ico`
         }
