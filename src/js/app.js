@@ -62,13 +62,14 @@ const add_new_app = async (app = {}, startup = false) => {
 $('#app_new').on('click', () => {
     invoke('add_new_app').then(app => {
         app = JSON.parse(app)
-        if(app !== null){
-            add_new_app(app)
 
+        if(app !== null){
             invoke('get_exe_icon', {
                 exe_path: app.target_file,
                 icon_name: app.id
             })
+
+            add_new_app(app)
         }
     })
 })
