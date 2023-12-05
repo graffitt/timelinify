@@ -6,7 +6,8 @@
     "scripts": {
         "tauri": "tauri",
         "tauri dev": "tauri dev",
-        "tauri build": "tauri build"
+        "tauri build": "tauri build",
+        "renormalize": "git add --renormalize ."
     },
     "devDependencies": {
         "@tauri-apps/api": "^1.4.0",
