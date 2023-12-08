@@ -43,8 +43,10 @@ const last_session_dialog = async (app, run_data, duration) => {
     })
 
     $('#last_session_dialog_button_Ignore').on('click', () => {
-        app.sessions.splice(-1, 1)
-        APPS_save()
+        if(app.sessions.at(-1).end === run_data.end){
+            app.sessions.splice(-1, 1)
+            APPS_save()
+        }
     })
 
     console.log(`last session: ${display_name} - ${unix_to_hms(duration, 1)}`)
