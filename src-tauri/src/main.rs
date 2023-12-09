@@ -48,7 +48,7 @@ pub struct App{
 }
 
 #[tauri::command]
-fn add_new_app() -> Option<String>{
+fn add_app_new() -> Option<String>{
     let file_path = choose_file();
 
     match file_path{
@@ -87,9 +87,10 @@ fn main(){
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             // open_explorer,
-            add_new_app,
+            add_app_new,
             run_app,
 
+            icon_file_exists,
             exe_has_icon,
             get_exe_icon,
             delete_icon,

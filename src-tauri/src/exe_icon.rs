@@ -1,6 +1,19 @@
 use exe::*;
 use std::fs;
 use std::path::PathBuf;
+use dirs_next;
+
+#[tauri::command(rename_all = "snake_case")]
+pub fn icon_file_exists(name: String) -> bool{
+    let icon_file_path = PathBuf::from(dirs_next::home_dir().unwrap()).join(".timelinify\\icons").join(name);
+
+    if icon_file_path.exists(){
+        return true
+    }
+    else {
+        return false
+    }
+}
 
 #[tauri::command(rename_all = "snake_case")]
 pub fn exe_has_icon(exe_path: String) -> bool{
