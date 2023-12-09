@@ -36,7 +36,7 @@ const add_app_new = async (app = {}) => {
 const add_app_ui_element = (app = {}, icon = '', admin = false) => {
     const {id, display_name, usage_time_s} = app
 
-    $('#app_new').before(/*html*/`
+    let app_card = /*html*/`
         <div class="app_card" data-id="${id}">
             <div class="app_icon_container app_inner_container">
                 <img class="app_icon" src="${icon}">
@@ -53,8 +53,15 @@ const add_app_ui_element = (app = {}, icon = '', admin = false) => {
                     <button class="app_delete" title="Delete app">🗑</button>
                 </div>
             </div>
-        </div>
-    `)
+        </div>`
+
+    // if #app_new exists
+    if($('#app_new').length){
+        $('#app_new').before(app_card)
+    }
+    else{
+        $('#apps_container').append(app_card)
+    }
 
     $('.app_icon').on('error', (event) => {
         $(event.target).attr('src', './img/placeholder.png')
