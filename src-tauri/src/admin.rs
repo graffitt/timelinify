@@ -5,7 +5,12 @@ use is_elevated::is_elevated;
 #[tauri::command(rename_all = "snake_case")]
 pub fn check_admin(exe_path: String) -> bool{
     let hkcu = RegKey::predef(HKEY_CURRENT_USER);
-    let apps = hkcu.open_subkey("Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers").unwrap();
+    let path = "Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers";
+
+    let apps = match hkcu.open_subkey(path){
+        Ok(_) => hkcu.open_subkey(path).unwrap(),
+        Err(_error) => return false
+    };
 
     for (key, value) in apps.enum_values().map(|x| x.unwrap()){
         if key.contains(&exe_path){
