@@ -32,3 +32,6 @@ ico creator
 exe viewer
     https://exe.urih.com
     https://speedtesting.herokuapp.com/peviewer
+
+gpg time to lock
+    https://superuser.com/questions/624343/keep-gnupg-credentials-cached-for-entire-user-session
