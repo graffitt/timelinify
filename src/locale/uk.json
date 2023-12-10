@@ -1,0 +1,35 @@
+{
+    "search_placeholder": "пошук",
+    "run_button_title": "Запустити додаток",
+    "info_button_title": "Детальніше про додаток",
+    "move_button_title": "Перемістити додаток до історії",
+    "delete_button_title": "Видалити додаток",
+
+    "info_tab_usage_time": "Час використання",
+    "info_tab_tracking_started": "Трекінг розпочато",
+    "info_tab_tracking_ended": "Трекінг завершено",
+    "info_tab_first_launch": "Перший запуск",
+    "info_tab_last_launch": "Останній запуск",
+    "info_tab_file": "Файл",
+    "info_tab_icon": "Icon",
+    "info_tab_session": "Сесії",
+    "info_tab_today": "сьогодні",
+    "info_tab_close": "Закрити",
+
+    "conf_dialog_header_move": "Переміщення",
+    "conf_dialog_header_delete": "Видалення",
+    "conf_dialog_text_move": "Ви дійсно хочете завершити трекінг додатку {app_name} та перемістити його до історії?",
+    "conf_dialog_text_delete": "Ви дійсно хочете видалити {app_name}?",
+    "conf_dialog_button_yes": "Так",
+    "conf_dialog_button_no": "Ні",
+
+    "last_s_dialog_header": "Остання сесія",
+    "last_s_dialog_app": "Додаток",
+    "last_s_dialog_start": "Початок",
+    "last_s_dialog_end": "Кінець",
+    "last_s_dialog_duration": "Тривалість",
+    "last_s_dialog_button_ok": "Ок",
+    "last_s_dialog_button_ignore": "Ігнорувати",
+
+    "test": "test"
+}

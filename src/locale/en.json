@@ -1,0 +1,34 @@
+{
+    "search_placeholder": "search",
+    "run_button_title": "Run app",
+    "info_button_title": "App info",
+    "move_button_title": "Move app to history",
+    "delete_button_title": "Delete app",
+
+    "info_tab_usage_time": "Usage time",
+    "info_tab_tracking_started": "Tracking started",
+    "info_tab_first_launch": "First launch",
+    "info_tab_last_launch": "Last launch",
+    "info_tab_file": "File",
+    "info_tab_icon": "Icon",
+    "info_tab_session": "Sessions",
+    "info_tab_today": "today",
+    "info_tab_close": "Close",
+
+    "conf_dialog_header_move": "Move",
+    "conf_dialog_header_delete": "Delete",
+    "conf_dialog_text_move": "Do you really want to stop tracking {app_name} and move it to history?",
+    "conf_dialog_text_delete": "Do you really want to delete {app_name}?",
+    "conf_dialog_button_yes": "Yes",
+    "conf_dialog_button_no": "No",
+
+    "last_s_dialog_header": "Last session",
+    "last_s_dialog_app": "App",
+    "last_s_dialog_start": "Start",
+    "last_s_dialog_end": "End",
+    "last_s_dialog_duration": "Duration",
+    "last_s_dialog_button_ok": "Ok",
+    "last_s_dialog_button_ignore": "Ignore",
+
+    "test": "test"
+}
