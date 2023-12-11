@@ -24,4 +24,4 @@ If you wish to run a development build of **timelinify**:
 - [vis-timeline](https://github.com/visjs/vis-timeline)
 - [Inter](https://github.com/rsms/inter)
 - [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono)
-- [blake3](https://github.com/BLAKE3-team/BLAKE3)
+- [BLAKE3](https://github.com/BLAKE3-team/BLAKE3)
