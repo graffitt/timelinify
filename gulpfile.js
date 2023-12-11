@@ -5,7 +5,8 @@ const path = {
         js_libs: './src/js/libs/_libs.js',
         stylus: './src/stylus/_bundle.styl',
         img: ['./src/img/*.+(svg|png)', '!./src/img/#*.*'], //except #
-        fonts: './src/fonts/*.woff2'//,
+        fonts: './src/fonts/*.woff2',
+        locale: './src/locale/*.json'//,
         // sounds: ['./src/sounds/**/*', '!./src/sounds/**/#*'],
         // themes: './src/themes/*.styl'
     },
@@ -15,7 +16,8 @@ const path = {
         js_libs: './release/js/',
         css: './release/css/',
         img: './release/img/',
-        fonts: './release/fonts/'//,
+        fonts: './release/fonts/',
+        locale: './release/locale/'//,
         // sounds: './release/sounds/',
         // themes: './release/themes/'
     },
@@ -31,6 +33,7 @@ const clean_css = require('gulp-clean-css')
 const del = require('del')
 const gulp_if = require('gulp-if')
 const sourcemaps = require('gulp-sourcemaps')
+const json_minify = require('gulp-json-minify')
 //-------------------------------------------------------------------
 
 const use_sourcemaps = false
@@ -92,11 +95,17 @@ const fonts = () => {
     return src(path.src.fonts)
         .pipe(dest(path.release.fonts))
 }
+const locale = () => {
+    return src(path.src.locale)
+        .pipe(json_minify())
+        .pipe(dest(path.release.locale))
+}
 
-const release = series(clean_release, html, js, stylus, img, fonts)
+const release = series(clean_release, html, js, stylus, img, fonts, locale)
 
 exports.release = release
 exports.html = html
 exports.js = js
 exports.stylus = stylus
 exports.img = img
+exports.locale = locale
