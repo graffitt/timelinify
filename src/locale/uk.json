@@ -18,8 +18,8 @@
 
     "conf_dialog_header_move": "Переміщення",
     "conf_dialog_header_delete": "Видалення",
-    "conf_dialog_text_move": "Ви дійсно хочете завершити трекінг додатку {app_name} та перемістити його до історії?",
-    "conf_dialog_text_delete": "Ви дійсно хочете видалити {app_name}?",
+    "conf_dialog_text_move": "Ви дійсно хочете завершити трекінг додатку {0} та перемістити його до історії?",
+    "conf_dialog_text_delete": "Ви дійсно хочете видалити {0}?",
     "conf_dialog_button_yes": "Так",
     "conf_dialog_button_no": "Ні",
 

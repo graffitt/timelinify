@@ -1,16 +1,15 @@
-// https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation
-// function createStringFromTemplate(template, variables){
-//     return template.replace(new RegExp("\{([^\{]+)\}", "g"), function(_unused, varName){
-//         return variables[varName]
-//     })
-// }
-
-// createStringFromTemplate(
-//     "I would like to receive email updates from {list_name} {var1} {var2} {var3}.",
-//     {
-//         list_name : "this store",
-//         var1      : "FOO",
-//         var2      : "BAR",
-//         var3      : "BAZ"
-//     }
-// )
+/**
+ * interpolate string
+ * [src](https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation/42100645#42100645)
+ * @param {string} string object for interpolation
+ * @param  {...any} objects set of subjects to interpolate
+ * @returns {string} result of interpolation
+ * @example
+ * // returns 'Lorem ipsum dolor sit amet'
+ * interpolate_string('Lorem {0} dolor {1} amet', 'ipsum', 'sit')
+ */
+const interpolate_string = (string = '', ...objects) => {
+    return string.replace(new RegExp('\{([^\{]+)\}', 'g'), (_unused, index) => {
+        return objects[parseInt(index)]
+    })
+}

@@ -18,8 +18,8 @@
 
     "conf_dialog_header_move": "Move",
     "conf_dialog_header_delete": "Delete",
-    "conf_dialog_text_move": "Do you really want to stop tracking {app_name} and move it to history?",
-    "conf_dialog_text_delete": "Do you really want to delete {app_name}?",
+    "conf_dialog_text_move": "Do you really want to stop tracking {0} and move it to history?",
+    "conf_dialog_text_delete": "Do you really want to delete {0}?",
     "conf_dialog_button_yes": "Yes",
     "conf_dialog_button_no": "No",
 
