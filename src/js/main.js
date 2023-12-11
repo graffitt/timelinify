@@ -99,9 +99,8 @@ $('#open').on('click', () => {
             console.warn([])
         }
     })
-    APPS_save_sessions()
+    // APPS_save_sessions()
 })
-// APPS_save_sessions()
 
 // exit
 $(window).on('keydown', (event) => {
@@ -109,3 +108,5 @@ $(window).on('keydown', (event) => {
         exit(1)
     }
 })
+
+// invoke('init_file_structure')

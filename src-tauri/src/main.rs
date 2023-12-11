@@ -10,6 +10,9 @@ use serde::{Serialize, Deserialize};
 use sha256::digest;
 // use std::process::Command;
 
+pub mod init_fs;
+use init_fs::init_file_structure;
+
 pub mod iso8601;
 use iso8601::{DT_FORMAT/*, iso8601*/};
 
@@ -84,9 +87,13 @@ fn add_app_new() -> Option<String>{
 
 // rust-analyzer type hints
 fn main(){
+    init_file_structure();
+
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             // open_explorer,
+            init_file_structure,
+
             add_app_new,
             run_app,
 

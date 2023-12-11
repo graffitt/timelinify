@@ -25,7 +25,7 @@ const app_run = (event) => {
             last_session_dialog(target, run_data, duration)
 
             APPS_save()
-            APPS_save_sessions()
+            // APPS_save_sessions()
         }
     })
     // last_session_dialog(APPS.active[2], {'start': '2023-10-14T20:44:22+03:00', 'end': '2023-10-14T21:42:31+03:00'}, 1488)

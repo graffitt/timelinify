@@ -28,4 +28,4 @@ const init_file_structure = (startup = false) => {
         }
     })
 }
-init_file_structure(true)
+// init_file_structure(true)
