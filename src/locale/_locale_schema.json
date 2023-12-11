@@ -120,7 +120,6 @@
         "last_s_dialog_end",
         "last_s_dialog_duration",
         "last_s_dialog_button_ok",
-        "last_s_dialog_button_ignore",
-        "test"
+        "last_s_dialog_button_ignore"
     ]
 }

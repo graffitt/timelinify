@@ -17,8 +17,8 @@
         "json.schemas": [
             {
                 "fileMatch": [
-                    "./src/locale/*.json",
-                    "!./src/locale/_locale_schema.json",
+                    "src/locale/*.json",
+                    "src/locale/_locale_schema.json",
                 ],
                 "url": "./src/locale/_locale_schema.json"
             }
