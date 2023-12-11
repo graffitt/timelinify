@@ -6,7 +6,7 @@ const path = {
         stylus: './src/stylus/_bundle.styl',
         img: ['./src/img/*.+(svg|png)', '!./src/img/#*.*'], //except #
         fonts: './src/fonts/*.woff2',
-        locale: './src/locale/*.json'//,
+        locale: ['./src/locale/*.json', '!./src/locale/_locale_schema.json']//,
         // sounds: ['./src/sounds/**/*', '!./src/sounds/**/#*'],
         // themes: './src/themes/*.styl'
     },
