@@ -38,3 +38,6 @@ gpg time to lock
 
 blake3 online
     https://connor4312.github.io/blake3/index.html
+
+json schema online
+    https://www.liquid-technologies.com/online-json-to-schema-converter

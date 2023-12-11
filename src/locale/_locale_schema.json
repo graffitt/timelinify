@@ -1,0 +1,126 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "locale",
+    "description": "This document records the details of an locale",
+    "type": "object",
+    "properties": {
+        "search_placeholder": {
+        "type": "string"
+        },
+        "run_button_title": {
+        "type": "string"
+        },
+        "info_button_title": {
+        "type": "string"
+        },
+        "move_button_title": {
+        "type": "string"
+        },
+        "delete_button_title": {
+        "type": "string"
+        },
+        "info_tab_usage_time": {
+        "type": "string"
+        },
+        "info_tab_tracking_started": {
+        "type": "string"
+        },
+        "info_tab_tracking_ended": {
+        "type": "string"
+        },
+        "info_tab_first_launch": {
+        "type": "string"
+        },
+        "info_tab_last_launch": {
+        "type": "string"
+        },
+        "info_tab_file": {
+        "type": "string"
+        },
+        "info_tab_icon": {
+        "type": "string"
+        },
+        "info_tab_session": {
+        "type": "string"
+        },
+        "info_tab_today": {
+        "type": "string"
+        },
+        "info_tab_close": {
+        "type": "string"
+        },
+        "conf_dialog_header_move": {
+        "type": "string"
+        },
+        "conf_dialog_header_delete": {
+        "type": "string"
+        },
+        "conf_dialog_text_move": {
+        "type": "string"
+        },
+        "conf_dialog_text_delete": {
+        "type": "string"
+        },
+        "conf_dialog_button_yes": {
+        "type": "string"
+        },
+        "conf_dialog_button_no": {
+        "type": "string"
+        },
+        "last_s_dialog_header": {
+        "type": "string"
+        },
+        "last_s_dialog_app": {
+        "type": "string"
+        },
+        "last_s_dialog_start": {
+        "type": "string"
+        },
+        "last_s_dialog_end": {
+        "type": "string"
+        },
+        "last_s_dialog_duration": {
+        "type": "string"
+        },
+        "last_s_dialog_button_ok": {
+        "type": "string"
+        },
+        "last_s_dialog_button_ignore": {
+        "type": "string"
+        },
+        "test": {
+        "type": "string"
+        }
+    },
+    "required": [
+        "search_placeholder",
+        "run_button_title",
+        "info_button_title",
+        "move_button_title",
+        "delete_button_title",
+        "info_tab_usage_time",
+        "info_tab_tracking_started",
+        "info_tab_tracking_ended",
+        "info_tab_first_launch",
+        "info_tab_last_launch",
+        "info_tab_file",
+        "info_tab_icon",
+        "info_tab_session",
+        "info_tab_today",
+        "info_tab_close",
+        "conf_dialog_header_move",
+        "conf_dialog_header_delete",
+        "conf_dialog_text_move",
+        "conf_dialog_text_delete",
+        "conf_dialog_button_yes",
+        "conf_dialog_button_no",
+        "last_s_dialog_header",
+        "last_s_dialog_app",
+        "last_s_dialog_start",
+        "last_s_dialog_end",
+        "last_s_dialog_duration",
+        "last_s_dialog_button_ok",
+        "last_s_dialog_button_ignore",
+        "test"
+    ]
+}

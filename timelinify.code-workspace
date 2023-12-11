@@ -13,6 +13,15 @@
             "release/": true,
             "corrections/": true
         },
-        "printtimestamp.timestampformat": "YYYY-MM-DDTHH:mm:ssZ"
+        "printtimestamp.timestampformat": "YYYY-MM-DDTHH:mm:ssZ",
+        "json.schemas": [
+            {
+                "fileMatch": [
+                    "./src/locale/*.json",
+                    "!./src/locale/_locale_schema.json",
+                ],
+                "url": "./src/locale/_locale_schema.json"
+            }
+        ]
     }
 }
