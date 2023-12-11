@@ -2,13 +2,10 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use native_dialog::FileDialog;
-use std::path::Path;
-use std::path::PathBuf;
-// use std::fs;
+use std::path::{Path, PathBuf};
 use chrono;
 use serde::{Serialize, Deserialize};
-use sha256::digest;
-// use std::process::Command;
+use blake3;
 
 pub mod init_fs;
 use init_fs::init_file_structure;
@@ -58,7 +55,7 @@ fn add_app_new() -> Option<String>{
         Some(path) => {
             let name = String::from(Path::new(&path).file_name().unwrap().to_os_string().into_string().unwrap().split('.').nth(0).unwrap());
             let app = App{
-                id: digest(&name),
+                id: blake3::hash(&name.as_bytes()).to_string(),
                 name: name.clone(),
                 display_name: name.clone(),
                 icon: String::from("./img/placeholder.png"),
