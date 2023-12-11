@@ -28,11 +28,6 @@ pub fn init_file_structure(){
 
         if !exist {
             create_dir(&abs_path).unwrap();
-
-            println!("{0} - {1} - created", &abs_path.display(), exist)
-        }
-        else {
-            println!("{0} - {1}", &abs_path.display(), exist)
         }
     }
     for file in files {
@@ -42,11 +37,6 @@ pub fn init_file_structure(){
         if !exist {
             let key = &abs_path.file_stem().unwrap().to_str().unwrap();
             write(&abs_path, templates.get(key).unwrap()).unwrap();
-
-            println!("{0} - {1} - created", &abs_path.display(), exist)
-        }
-        else {
-            println!("{0} - {1}", &abs_path.display(), exist)
         }
     }
 }
