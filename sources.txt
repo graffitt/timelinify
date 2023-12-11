@@ -35,3 +35,6 @@ exe viewer
 
 gpg time to lock
     https://superuser.com/questions/624343/keep-gnupg-credentials-cached-for-entire-user-session
+
+blake3 online
+    https://connor4312.github.io/blake3/index.html
