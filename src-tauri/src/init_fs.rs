@@ -17,7 +17,7 @@ pub fn init_file_structure(){
 
     let templates = HashMap::from([
         ("settings", format!("{{\n  \"lang\": \"en\"\n}}")),
-        ("apps", format!("{{\n  \"version\": 1,\n  \"active\": \"[]\"\n}}")),
+        ("apps", format!("{{\n  \"version\": 1,\n  \"active\": []\n}}")),
         ("history", format!("[]")),
     ]);
 
