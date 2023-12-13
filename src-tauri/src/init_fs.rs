@@ -12,13 +12,15 @@ pub fn init_file_structure(){
     let files = vec![
         ".timelinify\\settings.json",
         ".timelinify\\apps.json",
+        ".timelinify\\apps.bak",
         ".timelinify\\history.json"
     ];
 
     let templates = HashMap::from([
-        ("settings", format!("{{\n  \"lang\": \"en\"\n}}")),
-        ("apps", format!("{{\n  \"version\": 1,\n  \"active\": []\n}}")),
-        ("history", format!("[]")),
+        ("settings.json", format!("{{\n  \"lang\": \"en\"\n}}")),
+        ("apps.json", format!("{{\n  \"version\": 1,\n  \"active\": []\n}}")),
+        ("apps.bak", format!("{{\n  \"version\": 1,\n  \"active\": []\n}}")),
+        ("history.json", format!("[]")),
     ]);
 
 
@@ -35,7 +37,7 @@ pub fn init_file_structure(){
         let exist = abs_path.exists();
 
         if !exist {
-            let key = &abs_path.file_stem().unwrap().to_str().unwrap();
+            let key = &abs_path.file_name().unwrap().to_str().unwrap();
             write(&abs_path, templates.get(key).unwrap()).unwrap();
         }
     }
