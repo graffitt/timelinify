@@ -28,7 +28,7 @@ const app_run = (event) => {
             // APPS_save_sessions()
         }
     })
-    // last_session_dialog(APPS.active[2], {'start': '2023-10-14T20:44:22+03:00', 'end': '2023-10-14T21:42:31+03:00'}, 1488)
+    // last_session_dialog(APPS.active[0], {'start': '2023-10-14T20:44:22+03:00', 'end': '2023-10-14T21:42:31+03:00'}, 1488)
 }
 const app_info = async (app_id, from = APPS.active) => {
     let editable_app_index = from.findIndex(i => i.id === app_id)
