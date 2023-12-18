@@ -24,6 +24,7 @@
     "conf_dialog_button_no": "No",
 
     "last_s_dialog_header": "Last session",
+    "last_s_dialog_key_width": 76,
     "last_s_dialog_app": "App",
     "last_s_dialog_start": "Start",
     "last_s_dialog_end": "End",

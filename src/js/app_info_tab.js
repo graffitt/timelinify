@@ -40,7 +40,7 @@ const app_info_tab = async (app) => {
             </div>
         </main>
         <footer>
-            <button id="app_info_tab_close">Close</button>
+            <button id="app_info_tab_close">${locale(LOCALE.info_tab_close)}</button>
         </footer>
     `)
 

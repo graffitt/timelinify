@@ -36,6 +36,8 @@ const add_app_new = async (app = {}) => {
 const add_app_ui_element = (app = {}, icon = '', admin = false) => {
     const {id, display_name, usage_time_s} = app
 
+    let app_run_button_icon = admin ? '⚠️' : '▶'
+
     let app_card = /*html*/`
         <div class="app_card" data-id="${id}">
             <div class="app_icon_container app_inner_container">
@@ -46,11 +48,11 @@ const add_app_ui_element = (app = {}, icon = '', admin = false) => {
                 <span class="app_usage_time">${unix_to_hms(usage_time_s, 0, false)}</span>
             </div>
             <div class="app_buttons_container app_inner_container">
-                <button class="app_run" title="Run app">${admin ? '⚠️' : '▶'}</button>
+                <button class="app_run" title="${locale(LOCALE.run_button_title)}">${app_run_button_icon}</button>
                 <div class="app_buttons_sub_container">
-                    <button class="app_info" title="App info">🛈</button>
-                    <button class="app_move" title="Move app to history">→</button>
-                    <button class="app_delete" title="Delete app">🗑</button>
+                    <button class="app_info" title="${locale(LOCALE.info_button_title)}">🛈</button>
+                    <button class="app_move" title="${locale(LOCALE.move_button_title)}">→</button>
+                    <button class="app_delete" title="${locale(LOCALE.delete_button_title)}">🗑</button>
                 </div>
             </div>
         </div>`

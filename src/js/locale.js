@@ -1,3 +1,7 @@
+const {resolveResource} = window.__TAURI__.path
+
+let LOCALE = {}
+
 /**
  * interpolate string
  * [src](https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation/42100645#42100645)
@@ -10,6 +14,19 @@
  */
 const interpolate_string = (string = '', ...objects) => {
     return string.replace(new RegExp('\{([^\{]+)\}', 'g'), (_unused, index) => {
-        return objects[parseInt(index)]
+        return objects[parseInt(index)] ?? ''
     })
 }
+const locale = (string = '', ...objects) => {
+    return interpolate_string(string, objects)
+}
+
+const set_locale = (lang = 'en') => {
+    resolveResource(`../src/locale/${lang}.json`).then(path => {
+        readTextFile(path).then(locale_data => {
+            LOCALE = JSON.parse(locale_data)
+        })
+    })
+}
+
+set_locale('uk')

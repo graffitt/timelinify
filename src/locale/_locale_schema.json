@@ -70,6 +70,9 @@
         "last_s_dialog_header": {
         "type": "string"
         },
+        "last_s_dialog_key_width": {
+        "type": "number"
+        },
         "last_s_dialog_app": {
         "type": "string"
         },
@@ -115,6 +118,7 @@
         "conf_dialog_button_yes",
         "conf_dialog_button_no",
         "last_s_dialog_header",
+        "last_s_dialog_key_width",
         "last_s_dialog_app",
         "last_s_dialog_start",
         "last_s_dialog_end",

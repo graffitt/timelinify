@@ -7,6 +7,7 @@
 //require ./libs/vis-timeline-graph2d.min.js
 //--libs-end---------------------------
 
+//=require ./locale.js
 //=require ./init_file_structure.js
 //=require ./default_browser_hotkeys.js
 //=require ./save.js
