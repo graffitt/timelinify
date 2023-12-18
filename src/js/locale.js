@@ -1,5 +1,3 @@
-const {resolveResource} = window.__TAURI__.path
-
 let LOCALE = {}
 
 /**
@@ -28,5 +26,7 @@ const set_locale = (lang = 'en') => {
         })
     })
 }
+set_locale('en')
+//-----------------------------------------------------------------------------
 
-set_locale('uk')
+$('#search_box').prop('placeholder', LOCALE.search_placeholder)
