@@ -1,10 +1,3 @@
-const {invoke, convertFileSrc} = window.__TAURI__.tauri
-const {homeDir} = window.__TAURI__.path
-const {appWindow, PhysicalSize} = window.__TAURI__.window
-const {getVersion} = window.__TAURI__.app
-const {exit} = window.__TAURI__.process
-
-
 getVersion().then(version => {
     $('#version').text(version)
     console.warn(`timelinify v${version}`)

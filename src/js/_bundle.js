@@ -1,3 +1,4 @@
+//=require ./_tauri_apis.js
 //=require ./locale.js
 
 //--libs-------------------------------

@@ -1,5 +1,3 @@
-const {createDir, readTextFile, writeTextFile, exists, BaseDirectory} = window.__TAURI__.fs
-
 const file_options = {dir: BaseDirectory.Home, recursive: true}
 
 const apps_template = {
