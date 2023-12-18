@@ -31,12 +31,8 @@ const uglify = require('gulp-uglify')
 const gulp_stylus = require('gulp-stylus')
 const clean_css = require('gulp-clean-css')
 const del = require('del')
-const gulp_if = require('gulp-if')
-const sourcemaps = require('gulp-sourcemaps')
 const json_minify = require('gulp-json-minify')
 //-------------------------------------------------------------------
-
-const use_sourcemaps = false
 
 const uglify_html = false
 const uglify_js = false
@@ -56,23 +52,18 @@ const html = () => {
 }
 const js = () => {
     return src(path.src.js)
-        .pipe(gulp_if(use_sourcemaps, sourcemaps.init()))
         .pipe(include())
         .pipe(uglify())
-        .pipe(gulp_if(use_sourcemaps, sourcemaps.write('./')))
         .pipe(dest(path.release.js))
 }
 // const js_libs = () => {
 //     return src(path.src.js_libs)
-//         .pipe(gulp_if(use_sourcemaps, sourcemaps.init()))
 //         .pipe(include())
 //         // .pipe(uglify())
-//         .pipe(gulp_if(use_sourcemaps, sourcemaps.write('./')))
 //         .pipe(dest(path.release.js_libs))
 // }
 const stylus = () => {
     return src(path.src.stylus)
-        .pipe(gulp_if(use_sourcemaps, sourcemaps.init()))
         .pipe(include())
         .pipe(gulp_stylus({
             compress: uglify_css
@@ -84,7 +75,6 @@ const stylus = () => {
             trim: true,
             shorten: false
         }))*/
-        .pipe(gulp_if(use_sourcemaps, sourcemaps.write('./')))
         .pipe(dest(path.release.css))
 }
 const img = () => {
@@ -101,11 +91,11 @@ const locale = () => {
         .pipe(dest(path.release.locale))
 }
 
-const release = series(clean_release, html, js, stylus, img, fonts, locale)
+const release = series(clean_release, html, js, stylus, img, fonts, /*locale*/)
 
 exports.release = release
 exports.html = html
 exports.js = js
 exports.stylus = stylus
 exports.img = img
-exports.locale = locale
+// exports.locale = locale
