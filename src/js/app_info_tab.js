@@ -30,13 +30,13 @@ const app_info_tab = async (app) => {
             <img class="app_info_tab_icon" src="${icon}">
             </div>
             <div class="text_column column">
-                <span class="line"><span class="key">Usage time</span> <span class="value">${unix_to_hms(app.usage_time_s, 1)} (${unix_to_hms(today_usage_time, 1)} today)</span></span><br>
-                <span class="line"><span class="key">Tracking started</span> <span class="value">${iso_display(app.tracking_started, false)}</span></span><br>
-                <span class="line"><span class="key">First launch</span> <span class="value">${has_sessions ? iso_display(app.sessions[0].start, false) : 'never'}</span></span><br>
-                <span class="line"><span class="key">Last launch</span> <span class="value">${has_sessions ? iso_display(app.sessions.at(-1).start, false) : 'never'}</span></span><br>
-                <span class="line"><span class="key">File</span> <span class="value">${format_slash(app.target_file)}</span></span><br>
-                <span class="line"><span class="key">Icon</span> <span class="value">${format_slash(icon2)}</span></span><br>
-                <span class="line"><span class="key">Sessions</span> <span class="value">${app.sessions.length} (${today_sessions.length} today)</span></span><br>
+                <span class="line"><span class="key">${locale(LOCALE.info_tab_usage_time)}</span> <span class="value">${unix_to_hms(app.usage_time_s, 1)} (${unix_to_hms(today_usage_time, 1)} ${locale(LOCALE.info_tab_today)})</span></span><br>
+                <span class="line"><span class="key">${locale(LOCALE.info_tab_tracking_started)}</span> <span class="value">${iso_display(app.tracking_started, false)}</span></span><br>
+                <span class="line"><span class="key">${locale(LOCALE.info_tab_first_launch)}</span> <span class="value">${has_sessions ? iso_display(app.sessions[0].start, false) : 'never'}</span></span><br>
+                <span class="line"><span class="key">${locale(LOCALE.info_tab_last_launch)}</span> <span class="value">${has_sessions ? iso_display(app.sessions.at(-1).start, false) : 'never'}</span></span><br>
+                <span class="line"><span class="key">${locale(LOCALE.info_tab_file)}</span> <span class="value">${format_slash(app.target_file)}</span></span><br>
+                <span class="line"><span class="key">${locale(LOCALE.info_tab_icon)}</span> <span class="value">${format_slash(icon2)}</span></span><br>
+                <span class="line"><span class="key">${locale(LOCALE.info_tab_session)}</span> <span class="value">${app.sessions.length} (${today_sessions.length} ${locale(LOCALE.info_tab_today)})</span></span><br>
             </div>
         </main>
         <footer>
@@ -47,6 +47,8 @@ const app_info_tab = async (app) => {
     $('.app_info_tab_icon').on('error', (event) => {
         $(event.target).attr('src', './img/placeholder.png')
     })
+
+    $('.line .key').css('width', `${LOCALE.info_tab_key_width}px`)
 
     $('#app_info_tab_close').on('click.close', () => {
         app_info_tab_hide()
