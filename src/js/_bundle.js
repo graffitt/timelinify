@@ -1,8 +1,8 @@
 //=require ./_tauri_apis.js
+//=require ./libs/jquery-3.7.0.min.js
 //=require ./locale.js
 
 //--libs-------------------------------
-//=require ./libs/jquery-3.7.0.min.js
 //=require ./libs/unix-to-hms.js
 //=require ./libs/to-iso-string.js
 //=require ./libs/is_today.js
