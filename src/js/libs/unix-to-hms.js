@@ -44,6 +44,14 @@ const unix_to_hms = (time, time_format = 0, hide_zeros = true) => {
     minutes = /*format_00(*/Math.floor(minutes)//)
     seconds = /*format_00(*/Math.round(seconds)//)
 
+    let h = LOCALE.unix_to_hms_h
+    let m = LOCALE.unix_to_hms_m
+    let s = LOCALE.unix_to_hms_s
+
+    let h_ = LOCALE.unix_to_hms_hours
+    let m_ = LOCALE.unix_to_hms_minutes
+    let s_ = LOCALE.unix_to_hms_seconds
+
     // return `${hours}:${minutes}:${seconds}`
     switch(time_format){
         default:
@@ -54,12 +62,12 @@ const unix_to_hms = (time, time_format = 0, hide_zeros = true) => {
 
         case 1:
             return hide_zeros ?
-                format(hours, minutes, seconds, 'h ', 'm ', 's') :
-                `${hours}h ${minutes}m ${seconds}s`
+                format(hours, minutes, seconds, `${h} `, `${m} `, `${s}`) :
+                `${hours}${h} ${minutes}${m} ${seconds}${s}`
 
         case 2:
             return hide_zeros ?
-                format(hours, minutes, seconds, ' hours ', ' minutes ', ' seconds') :
-                `${hours} hours ${minutes} minutes ${seconds} seconds`
+                format(hours, minutes, seconds, ` ${h_} `, ` ${m_} `, ` ${s_}`) :
+                `${hours} ${h_} ${minutes} ${m_} ${seconds} ${s_}`
     }
 }

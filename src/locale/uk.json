@@ -1,4 +1,11 @@
 {
+    "unix_to_hms_h": "г",
+    "unix_to_hms_m": "х",
+    "unix_to_hms_s": "с",
+    "unix_to_hms_hours": "годин",
+    "unix_to_hms_minutes": "хвилин",
+    "unix_to_hms_seconds": "секунд",
+
     "search_placeholder": "пошук",
     "run_button_title": "Запустити додаток",
     "info_button_title": "Детальніше про додаток",

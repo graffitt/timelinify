@@ -1,4 +1,11 @@
 {
+    "unix_to_hms_h": "h",
+    "unix_to_hms_m": "m",
+    "unix_to_hms_s": "s",
+    "unix_to_hms_hours": "hours",
+    "unix_to_hms_minutes": "minutes",
+    "unix_to_hms_seconds": "seconds",
+
     "search_placeholder": "search",
     "run_button_title": "Run app",
     "info_button_title": "App info",

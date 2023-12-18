@@ -1,3 +1,6 @@
+//=require ./locale.js
+
+//--libs-------------------------------
 //=require ./libs/jquery-3.7.0.min.js
 //=require ./libs/unix-to-hms.js
 //=require ./libs/to-iso-string.js
@@ -7,7 +10,6 @@
 //require ./libs/vis-timeline-graph2d.min.js
 //--libs-end---------------------------
 
-//=require ./locale.js
 //=require ./init_file_structure.js
 //=require ./default_browser_hotkeys.js
 //=require ./save.js
