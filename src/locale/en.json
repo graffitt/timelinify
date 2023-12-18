@@ -5,6 +5,7 @@
     "move_button_title": "Move app to history",
     "delete_button_title": "Delete app",
 
+    "info_tab_key_width": 96,
     "info_tab_usage_time": "Usage time",
     "info_tab_tracking_started": "Tracking started",
     "info_tab_tracking_ended": "Tracking ended",

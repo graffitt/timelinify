@@ -38,6 +38,8 @@ const last_session_dialog = async (app, run_data, duration) => {
         $(event.target).attr('src', './img/placeholder.png')
     })
 
+    $('#last_session_dialog main .key').css('width', `${LOCALE.last_s_dialog_key_width}px`)
+
     $('#last_session_dialog_button_OK, #last_session_dialog_button_Ignore').on('click.dialog_hide', () => {
         last_session_dialog_hide()
     })
