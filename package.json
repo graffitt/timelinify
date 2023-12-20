@@ -7,11 +7,12 @@
         "tauri dev": "tauri dev",
         "tauri build": "tauri build",
         "new_version": "new_version.bat",
-        "renormalize": "git add --renormalize ."
+        "renormalize": "git add --renormalize .",
+        "tauri": "tauri"
     },
     "devDependencies": {
-        "@tauri-apps/api": "^1.4.0",
-        "@tauri-apps/cli": "^1.4.0",
+        "@tauri-apps/api": "^1.5.3",
+        "@tauri-apps/cli": "^1.5.9",
         "del": "^6.1.1",
         "eslint": "^8.47.0",
         "gulp": "^4.0.2",
