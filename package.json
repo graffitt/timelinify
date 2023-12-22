@@ -6,7 +6,7 @@
     "scripts": {
         "tauri dev": "tauri dev",
         "tauri build": "tauri build",
-        "new_version": "new_version.bat",
+        "change_version": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./change_version.ps1",
         "renormalize": "git add --renormalize .",
         "tauri": "tauri"
     },
