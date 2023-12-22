@@ -58,7 +58,8 @@ module.exports = {
             'else': {'before': false},
             'return': {'after': true},
             'throw': {'after': true},
-            'let': {'after': true}
+            'let': {'after': true},
+            'from': {'after': true}
         }}],
         // 'no-var': 'warn',
         'no-redeclare': 'off',
