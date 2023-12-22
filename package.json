@@ -2,6 +2,8 @@
     "name": "timelinify",
     "private": true,
     "version": "1.1.5",
+    "author": "graffitt",
+    "license": "MIT",
     "type": "commonjs",
     "scripts": {
         "tauri dev": "tauri dev",

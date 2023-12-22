@@ -14,7 +14,7 @@
             "all": false,
             "fs": {
                 "all": true,
-                "scope": ["**", "$HOME/**", "$RESOURCE/*"]
+                "scope": ["**", "$HOME/**"]
             },
             "shell": {
                 "all": false,
@@ -35,6 +35,11 @@
             "protocol": {
                 "asset": true,
                 "assetScope": ["$HOME/**"]
+            },
+            "http": {
+                "all": true,
+                "request": true,
+                "scope": ["http://127.0.0.1:1430/locale/*", "https://tauri.localhost/locale/*"]
             }
         },
         "bundle": {
@@ -50,10 +55,6 @@
                 "icons/128x128@2x.png",
                 "icons/icon.icns",
                 "icons/icon.ico"
-            ],
-            "resources": [
-                "../src/locale/en.json",
-                "../src/locale/uk.json"
             ]
         },
         "security": {

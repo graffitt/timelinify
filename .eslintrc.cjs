@@ -10,7 +10,8 @@ module.exports = {
     'extends': 'eslint:recommended',
     // 'parser': '@babel/eslint-parser',
     'parserOptions': {
-        'ecmaVersion': 15,
+        'ecmaVersion': 2023,
+        'sourceType': 'module',
         'project': 'jsconfig.json'
     },
     'rules': {

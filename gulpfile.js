@@ -53,7 +53,7 @@ const html = () => {
 const js = () => {
     return src(path.src.js)
         .pipe(include())
-        .pipe(uglify())
+        .pipe(uglify({module: true}))
         .pipe(dest(path.release.js))
 }
 // const js_libs = () => {
@@ -91,11 +91,11 @@ const locale = () => {
         .pipe(dest(path.release.locale))
 }
 
-const release = series(clean_release, html, js, stylus, img, fonts, /*locale*/)
+const release = series(clean_release, html, js, stylus, img, fonts, locale)
 
 exports.release = release
 exports.html = html
 exports.js = js
 exports.stylus = stylus
 exports.img = img
-// exports.locale = locale
+exports.locale = locale

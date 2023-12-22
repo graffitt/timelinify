@@ -1,3 +1,4 @@
+const {fetch} = window.__TAURI__.http
 const {invoke, convertFileSrc} = window.__TAURI__.tauri
 const {homeDir, resolveResource} = window.__TAURI__.path
 const {createDir, readTextFile, writeTextFile, exists, BaseDirectory} = window.__TAURI__.fs
