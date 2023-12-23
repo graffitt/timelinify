@@ -40,7 +40,7 @@ const set_locale = async (lang = 'en') => {
     LOCALE = await pre_LOCALE.json()
 }
 
-await set_locale('uk')
+await set_locale('en')
 //-----------------------------------------------------------------------------
 
 $('#search_box').prop('placeholder', LOCALE.search_placeholder)
