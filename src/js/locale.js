@@ -1,4 +1,6 @@
 let LOCALE = {}
+let _l = await locale()
+let system_lang = _l.split('-')[0]
 
 /**
  * interpolate string
@@ -15,29 +17,32 @@ const interpolate_string = (string = '', ...objects) => {
         return objects[parseInt(index)] ?? ''
     })
 }
-const locale = (string = '', ...objects) => {
+const localize = (string = '', ...objects) => {
     return interpolate_string(string, objects)
 }
 
 const set_locale = async (lang = 'en') => {
-    const prefix = 'https://tauri.localhost'//'http://127.0.0.1:1430'
     const langs = [
         'en',
         'uk'
     ]
+    const roots = [
+        'https://tauri.localhost',
+        'http://127.0.0.1:1430'
+    ]
+    const root = roots[1]
 
     if(langs.indexOf(lang) < 0){
         lang = 'en'
     }
 
-    let pre_LOCALE = await fetch(`${prefix}/locale/${lang}.json`)
-    LOCALE = pre_LOCALE.data
+    let pre_LOCALE = await fetch(`${root}/locale/${lang}.json`)
+    LOCALE = await pre_LOCALE.json()
 }
+
 await set_locale('uk')
 //-----------------------------------------------------------------------------
 
 $('#search_box').prop('placeholder', LOCALE.search_placeholder)
 
-// const response = await fetch('http://127.0.0.1:1430/locale/uk.json')
-// console.warn(response.data)
 console.warn(LOCALE)

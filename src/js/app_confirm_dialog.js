@@ -17,14 +17,14 @@ const app_confirm_dialog = async (app, message_type = -1) => {
 
         case 0: // move
             // message = `Do you really want to stop tracking <b>${display_name}</b> and move it to history?`
-            message = locale(LOCALE.conf_dialog_text_move, `<b>${display_name}</b>`)
+            message = localize(LOCALE.conf_dialog_text_move, `<b>${display_name}</b>`)
             // header = `Move`
             header = LOCALE.conf_dialog_header_move
             break
 
         case 1: // delete
             // message = `Do you really want to delete <b>${display_name}</b>?`
-            message = locale(LOCALE.conf_dialog_text_delete, `<b>${display_name}</b>`)
+            message = localize(LOCALE.conf_dialog_text_delete, `<b>${display_name}</b>`)
             // header = `Delete`
             header = LOCALE.conf_dialog_header_delete
             break
@@ -37,8 +37,8 @@ const app_confirm_dialog = async (app, message_type = -1) => {
             <span>${message}</span>
         </div>
         <div class="app_confirm_dialog_buttons_container">
-            <button id="app_confirm_dialog_button_YES" class="app_confirm_dialog_button">${locale(LOCALE.conf_dialog_button_yes)}</button>
-            <button id="app_confirm_dialog_button_NO" class="app_confirm_dialog_button">${locale(LOCALE.conf_dialog_button_no)}</button>
+            <button id="app_confirm_dialog_button_YES" class="app_confirm_dialog_button">${localize(LOCALE.conf_dialog_button_yes)}</button>
+            <button id="app_confirm_dialog_button_NO" class="app_confirm_dialog_button">${localize(LOCALE.conf_dialog_button_no)}</button>
         </div>
     `)
 

@@ -48,11 +48,11 @@ const add_app_ui_element = (app = {}, icon = '', admin = false) => {
                 <span class="app_usage_time">${unix_to_hms(usage_time_s, 0, false)}</span>
             </div>
             <div class="app_buttons_container app_inner_container">
-                <button class="app_run" title="${locale(LOCALE.run_button_title)}">${app_run_button_icon}</button>
+                <button class="app_run" title="${localize(LOCALE.run_button_title)}">${app_run_button_icon}</button>
                 <div class="app_buttons_sub_container">
-                    <button class="app_info" title="${locale(LOCALE.info_button_title)}">🛈</button>
-                    <button class="app_move" title="${locale(LOCALE.move_button_title)}">→</button>
-                    <button class="app_delete" title="${locale(LOCALE.delete_button_title)}">🗑</button>
+                    <button class="app_info" title="${localize(LOCALE.info_button_title)}">🛈</button>
+                    <button class="app_move" title="${localize(LOCALE.move_button_title)}">→</button>
+                    <button class="app_delete" title="${localize(LOCALE.delete_button_title)}">🗑</button>
                 </div>
             </div>
         </div>`

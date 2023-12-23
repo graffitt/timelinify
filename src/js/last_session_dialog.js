@@ -11,25 +11,25 @@ const last_session_dialog = async (app, run_data, duration) => {
     let ignore_button
 
     if(duration < duration_ignore_max){
-        ignore_button = `<button id="last_session_dialog_button_Ignore">${locale(LOCALE.last_s_dialog_button_ignore)}</span></button>`
+        ignore_button = `<button id="last_session_dialog_button_Ignore">${localize(LOCALE.last_s_dialog_button_ignore)}</span></button>`
     }
     else{
         ignore_button = ''
     }
 
     $('#last_session_dialog').html(/*html*/`
-        <header>${locale(LOCALE.last_s_dialog_header)}</header>
+        <header>${localize(LOCALE.last_s_dialog_header)}</header>
         <main>
             <img src="${icon}" class="app_confirm_dialog_icon">
             <div class="text_column column">
-                <span class="line"><span class="key">${locale(LOCALE.last_s_dialog_app)}</span> <span class="value">${display_name}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.last_s_dialog_start)}</span> <span class="value">${iso_display(run_data.start, false)}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.last_s_dialog_end)}</span> <span class="value">${iso_display(run_data.end, false)}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.last_s_dialog_duration)}</span> <span class="value">${unix_to_hms(duration, 1)}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.last_s_dialog_app)}</span> <span class="value">${display_name}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.last_s_dialog_start)}</span> <span class="value">${iso_display(run_data.start, false)}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.last_s_dialog_end)}</span> <span class="value">${iso_display(run_data.end, false)}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.last_s_dialog_duration)}</span> <span class="value">${unix_to_hms(duration, 1)}</span></span><br>
             </div>
         </main>
         <footer>
-            <button id="last_session_dialog_button_OK">${locale(LOCALE.last_s_dialog_button_ok)}</span></button>
+            <button id="last_session_dialog_button_OK">${localize(LOCALE.last_s_dialog_button_ok)}</span></button>
             ${ignore_button}
         </footer>
     `)

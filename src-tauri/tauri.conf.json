@@ -36,10 +36,8 @@
                 "asset": true,
                 "assetScope": ["$HOME/**"]
             },
-            "http": {
-                "all": true,
-                "request": true,
-                "scope": ["http://127.0.0.1:1430/locale/*", "https://tauri.localhost/locale/*"]
+            "os": {
+                "all": true
             }
         },
         "bundle": {

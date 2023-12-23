@@ -30,17 +30,17 @@ const app_info_tab = async (app) => {
             <img class="app_info_tab_icon" src="${icon}">
             </div>
             <div class="text_column column">
-                <span class="line"><span class="key">${locale(LOCALE.info_tab_usage_time)}</span> <span class="value">${unix_to_hms(app.usage_time_s, 1)} (${unix_to_hms(today_usage_time, 1)} ${locale(LOCALE.info_tab_today)})</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.info_tab_tracking_started)}</span> <span class="value">${iso_display(app.tracking_started, false)}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.info_tab_first_launch)}</span> <span class="value">${has_sessions ? iso_display(app.sessions[0].start, false) : 'never'}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.info_tab_last_launch)}</span> <span class="value">${has_sessions ? iso_display(app.sessions.at(-1).start, false) : 'never'}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.info_tab_file)}</span> <span class="value">${format_slash(app.target_file)}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.info_tab_icon)}</span> <span class="value">${format_slash(icon2)}</span></span><br>
-                <span class="line"><span class="key">${locale(LOCALE.info_tab_session)}</span> <span class="value">${app.sessions.length} (${today_sessions.length} ${locale(LOCALE.info_tab_today)})</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.info_tab_usage_time)}</span> <span class="value">${unix_to_hms(app.usage_time_s, 1)} (${unix_to_hms(today_usage_time, 1)} ${localize(LOCALE.info_tab_today)})</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.info_tab_tracking_started)}</span> <span class="value">${iso_display(app.tracking_started, false)}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.info_tab_first_launch)}</span> <span class="value">${has_sessions ? iso_display(app.sessions[0].start, false) : 'never'}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.info_tab_last_launch)}</span> <span class="value">${has_sessions ? iso_display(app.sessions.at(-1).start, false) : 'never'}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.info_tab_file)}</span> <span class="value">${format_slash(app.target_file)}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.info_tab_icon)}</span> <span class="value">${format_slash(icon2)}</span></span><br>
+                <span class="line"><span class="key">${localize(LOCALE.info_tab_session)}</span> <span class="value">${app.sessions.length} (${today_sessions.length} ${localize(LOCALE.info_tab_today)})</span></span><br>
             </div>
         </main>
         <footer>
-            <button id="app_info_tab_close">${locale(LOCALE.info_tab_close)}</button>
+            <button id="app_info_tab_close">${localize(LOCALE.info_tab_close)}</button>
         </footer>
     `)
 
