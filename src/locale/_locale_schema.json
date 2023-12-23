@@ -5,112 +5,112 @@
     "type": "object",
     "properties": {
         "unix_to_hms_h": {
-        "type": "string"
+            "type": "string"
         },
         "unix_to_hms_m": {
-        "type": "string"
+            "type": "string"
         },
         "unix_to_hms_s": {
-        "type": "string"
+            "type": "string"
         },
         "unix_to_hms_hours": {
-        "type": "string"
+            "type": "string"
         },
         "unix_to_hms_minutes": {
-        "type": "string"
+            "type": "string"
         },
         "unix_to_hms_seconds": {
-        "type": "string"
+            "type": "string"
         },
         "search_placeholder": {
-        "type": "string"
+            "type": "string"
         },
         "run_button_title": {
-        "type": "string"
+            "type": "string"
         },
         "info_button_title": {
-        "type": "string"
+            "type": "string"
         },
         "move_button_title": {
-        "type": "string"
+            "type": "string"
         },
         "delete_button_title": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_key_width": {
-        "type": "integer"
+            "type": "integer"
         },
         "info_tab_usage_time": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_tracking_started": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_tracking_ended": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_first_launch": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_last_launch": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_file": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_icon": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_session": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_today": {
-        "type": "string"
+            "type": "string"
         },
         "info_tab_close": {
-        "type": "string"
+            "type": "string"
         },
         "conf_dialog_header_move": {
-        "type": "string"
+            "type": "string"
         },
         "conf_dialog_header_delete": {
-        "type": "string"
+            "type": "string"
         },
         "conf_dialog_text_move": {
-        "type": "string"
+            "type": "string"
         },
         "conf_dialog_text_delete": {
-        "type": "string"
+            "type": "string"
         },
         "conf_dialog_button_yes": {
-        "type": "string"
+            "type": "string"
         },
         "conf_dialog_button_no": {
-        "type": "string"
+            "type": "string"
         },
         "last_s_dialog_header": {
-        "type": "string"
+            "type": "string"
         },
         "last_s_dialog_key_width": {
-        "type": "integer"
+            "type": "integer"
         },
         "last_s_dialog_app": {
-        "type": "string"
+            "type": "string"
         },
         "last_s_dialog_start": {
-        "type": "string"
+            "type": "string"
         },
         "last_s_dialog_end": {
-        "type": "string"
+            "type": "string"
         },
         "last_s_dialog_duration": {
-        "type": "string"
+            "type": "string"
         },
         "last_s_dialog_button_ok": {
-        "type": "string"
+            "type": "string"
         },
         "last_s_dialog_button_ignore": {
-        "type": "string"
+            "type": "string"
         }
     },
     "required": [
