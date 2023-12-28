@@ -11,7 +11,7 @@ const last_session_dialog = async (app, run_data, duration) => {
     let ignore_button
 
     if(duration < duration_ignore_max){
-        ignore_button = `<button id="last_session_dialog_button_Ignore">${localize(LOCALE.last_s_dialog_button_ignore)}</span></button>`
+        ignore_button = /*html*/`<button id="last_session_dialog_button_Ignore">${localize(LOCALE.last_s_dialog_button_ignore)}</button>`
     }
     else{
         ignore_button = ''
@@ -55,6 +55,7 @@ const last_session_dialog = async (app, run_data, duration) => {
 
     last_session_dialog_show()
 }
+window.last_session_dialog = last_session_dialog
 
 const last_session_dialog_show = () => {
     $('#last_session_dialog').css('display', 'flex')
