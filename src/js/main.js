@@ -27,7 +27,20 @@ invoke('is_process_elevated').then(admin => {
         console.error('admin')
     }
 })
-// let apps_temp = await readTextFile('.timelinify/apps.json', file_options)
+
+// $('#apps_tab').html(/*html*/`
+//     <div id="tool_bar">
+//         <div id="sort_box" style="display: none"></div>
+//         <button id="settings">⚙</button>
+//         <button temp id="apps_save">💾</button>
+//         <button temp id="calc">calc duration</button>
+//         <button temp id="open">validate paths</button>
+//         <input type="text" id="search_box" placeholder="search" role="search" autocomplete="off" spellcheck="false">
+//     </div>
+//     <div id="apps_container">
+//         <button id="app_new" class="app_card service">+</button>
+//     </div>
+// `)
 
 readTextFile('.timelinify/apps.json', file_options).then(result => {
     APPS = JSON.parse(result)
@@ -50,6 +63,7 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
         }
     })
     // console.warn(unfinished_session())
+    window.APPS = APPS
 })
 
 exists('.timelinify/history.json', file_options).then(result => {
