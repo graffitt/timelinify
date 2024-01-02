@@ -59,7 +59,7 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
 
     validate_paths(APPS.active).then(response => {
         if(response.length > 0){
-            console.warn(response[0])
+            console.warn('does not exist', response[0])
         }
     })
     // console.warn(unfinished_session())

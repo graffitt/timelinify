@@ -46,4 +46,4 @@ await set_locale('en')
 
 $('#search_box').prop('placeholder', LOCALE.search_placeholder)
 
-console.warn(LOCALE)
+console.warn('locale', LOCALE)
