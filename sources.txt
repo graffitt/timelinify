@@ -44,3 +44,6 @@ json schema online
     https://www.jsonschemavalidator.net/
 
 https://github.com/tauri-apps/tauri/discussions/6347
+
+rust measure time
+    https://stackoverflow.com/questions/13322479/how-to-benchmark-programs-in-rust
