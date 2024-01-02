@@ -1,6 +1,6 @@
 const format_slash = (string) => {
-    return string.replaceAll('/', '<l>/</l>').replaceAll('\\', '<l>\\</l>')
-        .replaceAll('<l>/</l><l>/</l>', '<l>//</l>').replaceAll('<l>\\</l><l>\\</l>', '<l>\\\\</l>')
+    // capture double and single slashes and backslashes
+    return string.replace(/(\\{1,2})|([\/\/]{1,2})/g, '<l>$1$2</l>')
 }
 
 const app_info_tab = async (app) => {
@@ -30,6 +30,7 @@ const app_info_tab = async (app) => {
             <img class="app_info_tab_icon" src="${icon}">
             </div>
             <div class="text_column column">
+                <span class="line"><span class="key">ID</span> <span class="value">${app.id}</span></span><br>
                 <span class="line"><span class="key">${localize(LOCALE.info_tab_usage_time)}</span> <span class="value">${unix_to_hms(app.usage_time_s, 1)} (${unix_to_hms(today_usage_time, 1)} ${localize(LOCALE.info_tab_today)})</span></span><br>
                 <span class="line"><span class="key">${localize(LOCALE.info_tab_tracking_started)}</span> <span class="value">${iso_display(app.tracking_started, false)}</span></span><br>
                 <span class="line"><span class="key">${localize(LOCALE.info_tab_first_launch)}</span> <span class="value">${has_sessions ? iso_display(app.sessions[0].start, false) : 'never'}</span></span><br>
