@@ -1,4 +1,5 @@
 use exe::*;
+use ico::IconDir;
 use std::fs;
 use std::path::PathBuf;
 use dirs_next;
@@ -44,8 +45,25 @@ pub fn get_exe_icon(exe_path: String, icon_name: String){
 
     for (_id, dir) in &icons {
         let icon_file = dir.to_icon_buffer(&pe).unwrap();
+        let save_path = PathBuf::from(dirs_next::home_dir().unwrap()).join(".timelinify\\icons");
+        icon_file.save(&save_path.join(format!("{}.ico", icon_name))).unwrap();
 
-        icon_file.save(PathBuf::from(dirs_next::home_dir().unwrap()).join(format!(".timelinify\\icons\\{}.ico", icon_name))).unwrap();
+        optimize_and_conv2_png(save_path, icon_name.clone());
+    }
+}
+fn optimize_and_conv2_png(icon_path: PathBuf, icon_name: String){
+    let file = std::fs::File::open(icon_path.join(format!("{}.ico", icon_name))).unwrap();
+    let icon_dir = IconDir::read(file).unwrap();
+
+    let mut vec = icon_dir.entries().to_vec();
+    vec.sort_by_key(|a| a.width());
+
+    let image = &vec.as_slice().last().unwrap().decode().unwrap();
+    let file = std::fs::File::create(icon_path.join(format!("{}.png", icon_name))).unwrap();
+    image.write_png(file).unwrap();
+
+    if icon_path.join(format!("{}.ico", icon_name)).exists(){
+        fs::remove_file(icon_path.join(format!("{}.ico", icon_name))).unwrap();
     }
 }
 

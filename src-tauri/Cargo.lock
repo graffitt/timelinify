@@ -3172,6 +3172,7 @@ dependencies = [
  "chrono",
  "dirs-next",
  "exe",
+ "ico",
  "is_elevated",
  "native-dialog",
  "serde",
