@@ -54,11 +54,13 @@ fn add_app_new() -> Option<String>{
     match file_path{
         Some(path) => {
             let name = String::from(Path::new(&path).file_name().unwrap().to_os_string().into_string().unwrap().split('.').nth(0).unwrap());
+            let hash = blake3::hash(&name.as_bytes()).to_string();
+
             let app = App{
-                id: blake3::hash(&name.as_bytes()).to_string(),
+                id: hash.clone(),
                 name: name.clone(),
                 display_name: name.clone(),
-                icon: String::from("./img/placeholder.png"),
+                icon: format!("{0}.png", &hash),
                 target_file: path.clone(),
                 target_file_name: Path::new(&path).file_name().unwrap().to_os_string().into_string().unwrap(),
                 tracking_started: chrono::offset::Local::now().format(DT_FORMAT).to_string(),
