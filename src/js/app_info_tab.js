@@ -19,7 +19,7 @@ const app_info_tab = async (app) => {
 
     let {icon} = app
     let icon2 = icon
-    if(!icon.startsWith('http') && await exists(`.timelinify/icons/${app.id}.png`, file_options)){
+    if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: icon})){
         icon = convertFileSrc(ICON_PATH + icon)
     }
 

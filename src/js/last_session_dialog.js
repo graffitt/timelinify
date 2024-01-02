@@ -1,9 +1,8 @@
 const last_session_dialog = async (app, run_data, duration) => {
-    const {id, display_name} = app
+    const {display_name} = app
     let {icon} = app
 
-
-    if(!icon.startsWith('http') && await exists(`.timelinify/icons/${id}.png`, file_options)){
+    if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: icon})){
         icon = convertFileSrc(ICON_PATH + icon)
     }
 
