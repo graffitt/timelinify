@@ -31,6 +31,7 @@ const set_locale = async (lang = 'en') => {
         'http://127.0.0.1:1430'
     ]
     const root = roots[1]
+    //await ping('http://127.0.0.1:1430/')
 
     if(langs.indexOf(lang) < 0){
         lang = 'en'

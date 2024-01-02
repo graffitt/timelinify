@@ -1,5 +1,6 @@
 //=require ./_tauri_apis.js
 //=require ./libs/jquery-3.7.0.min.js
+//require ./libs/ping.js
 //=require ./locale.js
 
 //--libs-------------------------------
