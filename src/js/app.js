@@ -2,9 +2,9 @@ const add_app = async (app = {}) => {
     const {id, target_file} = app
     let {icon} = app
 
-    if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: `${id}.ico`})){
-        icon = convertFileSrc(ICON_PATH + `${id}.ico`)
-        app.icon = `${id}.ico`
+    if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: `${id}.png`})){
+        icon = convertFileSrc(ICON_PATH + `${id}.png`)
+        app.icon = `${id}.png`
     }
 
     let admin = await invoke('check_admin', {exe_path: target_file})
@@ -16,9 +16,9 @@ const add_app_new = async (app = {}) => {
     let {icon} = app
 
     if(!APPS.active.some(i => i.name === name)){
-        if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: `${id}.ico`})){
-            icon = convertFileSrc(ICON_PATH + `${id}.ico`)
-            app.icon = `${id}.ico`
+        if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: `${id}.png`})){
+            icon = convertFileSrc(ICON_PATH + `${id}.png`)
+            app.icon = `${id}.png`
         }
 
         APPS.active.push(app)
