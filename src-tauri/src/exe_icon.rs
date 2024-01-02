@@ -69,7 +69,7 @@ fn optimize_and_conv2_png(icon_path: PathBuf, icon_name: String){
 
 #[tauri::command(rename_all = "snake_case")]
 pub fn delete_icon(icon_name: String){
-    let icon_path = PathBuf::from(dirs_next::home_dir().unwrap()).join(format!(".timelinify\\icons\\{}.ico", icon_name));
+    let icon_path = PathBuf::from(dirs_next::home_dir().unwrap()).join(format!(".timelinify\\icons\\{}.png", icon_name));
 
     if icon_path.exists(){
         fs::remove_file(icon_path).unwrap();
