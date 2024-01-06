@@ -22,6 +22,9 @@ use exe_icon::*;
 pub mod admin;
 use admin::{check_admin, is_process_elevated};
 
+pub mod accent_color;
+use accent_color::get_accent_color;
+
 //-----------------------------------------------
 
 fn choose_file() -> Option<PathBuf>{
@@ -103,7 +106,8 @@ fn main(){
             delete_unnecessary_icons,
 
             check_admin,
-            is_process_elevated
+            is_process_elevated,
+            get_accent_color
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

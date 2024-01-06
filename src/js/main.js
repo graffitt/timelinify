@@ -117,3 +117,4 @@ $(window).on('keydown', (event) => {
 })
 
 // invoke('init_file_structure')
+$('#apps_tab, #apps_container').css('background-color', await invoke('get_accent_color'))

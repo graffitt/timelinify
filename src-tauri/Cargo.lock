@@ -3175,6 +3175,7 @@ dependencies = [
  "ico",
  "is_elevated",
  "native-dialog",
+ "regex",
  "serde",
  "serde_json",
  "tauri",
