@@ -3,6 +3,7 @@ use winreg::RegKey;
 use regex::Regex;
 
 #[tauri::command]
+///returns current windows accent color in hex
 pub fn get_accent_color() -> String{
     let hkcu = RegKey::predef(HKEY_CURRENT_USER);
     let apps = hkcu.open_subkey("Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Accent").unwrap();
@@ -11,7 +12,7 @@ pub fn get_accent_color() -> String{
 
     return process_string(format!("{:x}", acm))
 }
-
+///ffd47800 -> #0078d4
 fn process_string(input: String) -> String{
     // println!("{}", input);
     let without_ff = input.trim_start_matches(['f', 'F']);
