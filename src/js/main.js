@@ -3,13 +3,11 @@ getVersion().then(version => {
     console.warn(`timelinify v${version}`)
 })
 
-let HOME_DIR
-let ICON_PATH
+const ICON_PATH = `${await homeDir()}/.timelinify/icons/`
 
-homeDir().then(dir => {
-    HOME_DIR = dir
-    ICON_PATH = `${dir}/.timelinify/icons/`
-})
+// homeDir().then(dir => {
+//     ICON_PATH = `${dir}/.timelinify/icons/`
+// })
 
 const VERSIONS = {
     apps: 1
@@ -22,7 +20,7 @@ let APPS_hash = 0
 
 let HISTORY = []
 
-let ACCENT_COLOR = await invoke('get_accent_color')
+const ACCENT_COLOR = await invoke('get_accent_color')
 
 invoke('is_process_elevated').then(admin => {
     if(admin){
