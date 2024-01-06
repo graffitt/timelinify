@@ -22,9 +22,11 @@ let APPS_hash = 0
 
 let HISTORY = []
 
+let ACCENT_COLOR = await invoke('get_accent_color')
+
 invoke('is_process_elevated').then(admin => {
     if(admin){
-        console.error('admin')
+        console.warn('launched as admin')
     }
 })
 
@@ -117,4 +119,3 @@ $(window).on('keydown', (event) => {
 })
 
 // invoke('init_file_structure')
-$('#apps_tab, #apps_container').css('background-color', await invoke('get_accent_color'))
