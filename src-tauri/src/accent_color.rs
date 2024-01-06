@@ -19,7 +19,7 @@ pub fn get_accent_color() -> String{
 
     return process_string(format!("{:x}", color))
 }
-///ffd47800 -> #0078d4
+/// ffd47800 -> #0078d4
 fn process_string(input: String) -> String{
     // println!("{}", input);
     let without_ff = input.trim_start_matches(['f', 'F']);
