@@ -12,8 +12,8 @@ pub struct Session{
     end: String
 }
 
-#[tauri::command]
-pub fn run_app(id: String, target: String) -> Option<String>{
+#[tauri::command(rename_all = "snake_case")]
+pub fn run_app(id: String, name: String, target: String) -> Option<String>{
     let path = Path::new(&target);
     if path.exists(){
         let start = chrono::offset::Local::now().format(DT_FORMAT).to_string();
@@ -21,7 +21,7 @@ pub fn run_app(id: String, target: String) -> Option<String>{
         if PathBuf::from(dirs_next::home_dir().unwrap()).join(".timelinify").exists(){
             fs::write(
                 PathBuf::from(dirs_next::home_dir().unwrap()).join(".timelinify\\_unfinished.json"),
-                format!("{{\n  \"id\": \"{0}\",\n  \"start\": \"{1}\"\n}}", &id, &start)
+                format!("{{\n  \"id\": \"{0}\",\n  \"name\": \"{1}\",\n  \"start\": \"{2}\"\n}}", &id, &name, &start)
             ).expect("Unable to write file");
         }
         let _app = Command::new(target).output();

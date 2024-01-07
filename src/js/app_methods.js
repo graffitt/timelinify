@@ -1,6 +1,6 @@
 const app_run = (event) => {
     const id = $(event.target).parents('.app_card')[0].dataset.id
-    const target = APPS.active.find(i => i.id === id)
+    const app = APPS.active.find(i => i.id === id)
 
     $(event.target).text('■')
     $(event.target).trigger('blur')
@@ -9,7 +9,8 @@ const app_run = (event) => {
 
     invoke('run_app', {
         id: id,
-        target: target.target_file
+        name: app.name,
+        target: app.target_file
     }).then(run_data => {
         $(event.target).text('▶')
         $(event.target).prop('disabled', false)
@@ -19,10 +20,10 @@ const app_run = (event) => {
         if(run_data !== null){
             let duration = (new Date(run_data.end) - new Date(run_data.start)) / 1000
 
-            target.sessions.push(run_data)
-            target.usage_time_s += duration
-            $(event.target).parent().siblings('.app_text_container').children('.app_usage_time').text(unix_to_hms(target.usage_time_s, 0, false))
-            last_session_dialog(target, run_data, duration)
+            app.sessions.push(run_data)
+            app.usage_time_s += duration
+            $(event.target).parent().siblings('.app_text_container').children('.app_usage_time').text(unix_to_hms(app.usage_time_s, 0, false))
+            last_session_dialog(app, run_data, duration)
 
             APPS_save()
             // APPS_save_sessions()
