@@ -68,7 +68,7 @@ const add_app_ui_element = (app = {}, icon = '', require_admin = false) => {
         $(event.target).attr('src', './img/placeholder.png')
     })
 
-    if(require_admin){
+    if(require_admin && !LAUNCHED_AS_ADMIN){
         $(`.app_card[data-id="${id}"] .app_run`).addClass('require_admin')
         $(`.app_card[data-id="${id}"] .app_run`).prop('disabled', true)
         $(`.app_card[data-id="${id}"] .app_run`).attr('title', LOCALE.run_button_title_adm)
