@@ -22,11 +22,8 @@ let HISTORY = []
 
 const ACCENT_COLOR = await invoke('get_accent_color')
 
-invoke('is_process_elevated').then(admin => {
-    if(admin){
-        console.warn('launched as admin')
-    }
-})
+const LAUNCHED_AS_ADMIN = await invoke('is_process_elevated')
+console.warn('launched as admin', LAUNCHED_AS_ADMIN)
 
 // $('#apps_tab').html(/*html*/`
 //     <div id="tool_bar">
@@ -46,10 +43,9 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
     APPS = JSON.parse(result)
     console.warn('active', APPS)
 
-    let id_list = []
-    APPS.active.forEach(app => {add_app(app), id_list.push(app.id)})
-    console.warn(id_list)
-
+    // let id_list = []
+    APPS.active.forEach(app => {add_app(app)/*, id_list.push(app.id)*/})
+    // console.warn('id list', id_list)
     // invoke('delete_unnecessary_icons', {
     //     existing_icons: id_list
     // })
