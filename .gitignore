@@ -1,5 +1,6 @@
 *.lnk
 \#*.*
+* - Copy.*
 
 node_modules
 release
