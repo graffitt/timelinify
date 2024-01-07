@@ -8,6 +8,7 @@
 
     "search_placeholder": "search",
     "run_button_title": "Run app",
+    "run_button_title_adm": "This app require admin rights",
     "info_button_title": "App info",
     "move_button_title": "Move app to history",
     "delete_button_title": "Delete app",

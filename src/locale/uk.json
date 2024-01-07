@@ -8,6 +8,7 @@
 
     "search_placeholder": "пошук",
     "run_button_title": "Запустити додаток",
+    "run_button_title_adm": "Цей додаток потребує прав адміністратора",
     "info_button_title": "Детальніше про додаток",
     "move_button_title": "Перемістити додаток до історії",
     "delete_button_title": "Видалити додаток",
