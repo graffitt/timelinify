@@ -7,6 +7,7 @@ const format_00 = (value = 0) => {
 
     return value
 }
+window.format_00 = format_00
 
 const format = (h = 0, m = 0, s = 0, h_str = '', m_str = '', s_str = '') => {
     let result = []
@@ -20,6 +21,7 @@ const format = (h = 0, m = 0, s = 0, h_str = '', m_str = '', s_str = '') => {
 
     return result.join('').trim()
 }
+window.format = format
 
 /**
  * UNIX time to formated time - 108297 -> 30:04:57
@@ -28,9 +30,9 @@ const format = (h = 0, m = 0, s = 0, h_str = '', m_str = '', s_str = '') => {
  * @returns {string} 30:04:57
  */
 const unix_to_hms = (time, time_format = 0, hide_zeros = true) => {
-    if(time % 1000 === 0){
-        time /= 1000
-    }
+    // if(time % 1000 === 0){
+    //     time /= 1000
+    // }
 
     let hours = time / 3600
     let hours_decimal = hours % 1
@@ -71,3 +73,4 @@ const unix_to_hms = (time, time_format = 0, hide_zeros = true) => {
                 `${hours} ${h_} ${minutes} ${m_} ${seconds} ${s_}`
     }
 }
+window.unix_to_hms = unix_to_hms
