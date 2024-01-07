@@ -6,8 +6,8 @@ const add_app = async (app = {}) => {
         icon = convertFileSrc(ICON_PATH + icon)
     }
 
-    let admin = await invoke('check_admin', {exe_path: target_file})
-    add_app_ui_element(app, icon, admin)
+    let require_admin = await invoke('check_admin', {exe_path: target_file})
+    add_app_ui_element(app, icon, require_admin)
 }
 
 const add_app_new = async (app = {}) => {
@@ -21,8 +21,8 @@ const add_app_new = async (app = {}) => {
 
         APPS.active.push(app)
 
-        let admin = await invoke('check_admin', {exe_path: target_file})
-        add_app_ui_element(app, icon, admin)
+        let require_admin = await invoke('check_admin', {exe_path: target_file})
+        add_app_ui_element(app, icon, require_admin)
 
         APPS_save()
     }
@@ -31,10 +31,11 @@ const add_app_new = async (app = {}) => {
     }
 }
 
-const add_app_ui_element = (app = {}, icon = '', admin = false) => {
+const add_app_ui_element = (app = {}, icon = '', require_admin = false) => {
     const {id, display_name, usage_time_s} = app
 
-    let app_run_button_icon = admin ? '⚠️' : '▶'
+    let app_run_button_icon = require_admin ? LAUNCHED_AS_ADMIN ? '▶' : '⚠️' : '▶'
+
 
     let app_card = /*html*/`
         <div class="app_card" data-id="${id}">
@@ -67,9 +68,13 @@ const add_app_ui_element = (app = {}, icon = '', admin = false) => {
         $(event.target).attr('src', './img/placeholder.png')
     })
 
-    if(!admin){
-        $('.app_run').off('click')
-        $('.app_run').on('click', (event) => {app_run(event)})
+    if(require_admin){
+        $(`.app_card[data-id="${id}"] .app_run`).addClass('require_admin')
+        $(`.app_card[data-id="${id}"] .app_run`).prop('disabled', true)
+        $(`.app_card[data-id="${id}"] .app_run`).attr('title', LOCALE.run_button_title_adm)
+    }
+    else{
+        $(`.app_card[data-id="${id}"] .app_run`).on('click', (event) => {app_run(event)})
     }
 
     $('.app_info').off('click')
