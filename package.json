@@ -10,6 +10,7 @@
         "tauri build": "tauri build",
         "change_version": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./change_version.ps1",
         "renormalize": "git add --renormalize .",
+        "clean": "cargo clean -v",
         "tauri": "tauri"
     },
     "devDependencies": {
