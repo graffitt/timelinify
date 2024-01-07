@@ -34,24 +34,24 @@ const APPS_backup = () => {
         }
     })
 }
-const APPS_save_sessions = () => {
-    let temp = []
-    APPS.active.forEach(i => {
-        temp.push({
-            id: i.id,
-            name: i.name,
-            sessions: i.sessions
-        })
-    })
-    exists('.timelinify', file_options).then(result => {
-        if(result){
-            writeTextFile('.timelinify/sessions.json', JSON.stringify(temp, null, 2), file_options)
-        }
-        else{
-            init_file_structure()
-        }
-    })
-}
+// const APPS_save_sessions = () => {
+//     let temp = []
+//     APPS.active.forEach(i => {
+//         temp.push({
+//             id: i.id,
+//             name: i.name,
+//             sessions: i.sessions
+//         })
+//     })
+//     exists('.timelinify', file_options).then(result => {
+//         if(result){
+//             writeTextFile('.timelinify/sessions.json', JSON.stringify(temp, null, 2), file_options)
+//         }
+//         else{
+//             init_file_structure()
+//         }
+//     })
+// }
 const HISTORY_save = () => {
     exists('.timelinify', file_options).then(result => {
         if(result){
