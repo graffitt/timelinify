@@ -19,6 +19,7 @@ If you wish to run a development build of **timelinify**:
 - Run `npm run tauri build` to build an executable or `npm run tauri dev` to run a development build
 
 ## Thanks
+Projects used in this project besides [tauri](https://github.com/tauri-apps/tauri)
 - [jQuery](https://github.com/jquery/jquery)
 - [Fuse.js](https://github.com/krisk/fuse)
 - [vis-timeline](https://github.com/visjs/vis-timeline)
