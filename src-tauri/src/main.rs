@@ -89,6 +89,8 @@ fn add_app_new() -> Option<String>{
 
 // rust-analyzer type hints
 fn main(){
+    println!("v{}", env!("CARGO_PKG_VERSION"));
+
     init_file_structure();
 
     tauri::Builder::default()
