@@ -1,5 +1,5 @@
 const migrate_apps_1_to_2 = async () => {
-    if(APPS.version < VERSIONS.apps){
+    if(APPS.version === 1 && VERSIONS.apps === 2){
         APPS.active.forEach(async (app, index) => {
             app.id = await invoke('blake3_export', {input: app.name})
 
