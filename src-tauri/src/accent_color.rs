@@ -1,33 +1,37 @@
-use winreg::enums::*;
+use winreg::enums::HKEY_CURRENT_USER;
 use winreg::RegKey;
 use regex::Regex;
 
-#[tauri::command]
+#[tauri::command(rename_all = "snake_case")]
 /// returns current windows accent color in hex
 ///
 /// default color - 0xffd77800 (4292311040) [src](https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup-themes-windowcolor#values)
-pub fn get_accent_color() -> String{
+pub fn get_accent_color(include_aplha: bool) -> String{
     let hkcu = RegKey::predef(HKEY_CURRENT_USER);
     let path = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Accent";
 
+    let default_color_dec: u32 = 4292311040;
+    let default_color_hex: String = String::from("#0078d7");
+
     let accent = match hkcu.open_subkey(path){
         Ok(_) => hkcu.open_subkey(path).unwrap(),
-        Err(_error) => return String::from("#0078d7")
+        Err(_error) => return default_color_hex
     };
 
-    let color: u32 = accent.get_value("AccentColorMenu").unwrap_or_else(|_| {4292311040});
+    let color_hex: u32 = accent.get_value("AccentColorMenu").unwrap_or_else(|_| {default_color_dec});
 
-    return process_string(format!("{:x}", color))
+    return hex_to_color(format!("{:x}", color_hex), include_aplha)
 }
 /// ffd47800 -> #0078d4
-fn process_string(input: String) -> String{
-    // println!("{}", input);
-    let without_ff = input.trim_start_matches(['f', 'F']);
+fn hex_to_color(mut color_hex: String, include_aplha: bool) -> String{
+    if !include_aplha {
+        color_hex = color_hex.trim_start_matches(['f', 'F']).to_string()
+    }
 
     let reg = Regex::new(r"(.{1,2})").unwrap();
     let mut temp: Vec<&str> = vec![];
 
-    for (_, [group]) in reg.captures_iter(without_ff).map(|c| c.extract()) {
+    for (_, [group]) in reg.captures_iter(&color_hex).map(|c| c.extract()) {
         temp.push(group)
     }
     temp.reverse();
