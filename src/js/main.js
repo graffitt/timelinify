@@ -10,7 +10,7 @@ const ICON_PATH = `${await homeDir()}/.timelinify/icons/`
 // })
 
 const VERSIONS = {
-    apps: 1
+    apps: 2
 }
 let APPS = {
     version: VERSIONS.apps,
@@ -59,7 +59,6 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
         }
     })
     // console.warn(unfinished_session())
-    window.APPS = APPS
 })
 
 exists('.timelinify/history.json', file_options).then(result => {
@@ -70,6 +69,7 @@ exists('.timelinify/history.json', file_options).then(result => {
         })
     }
 })
+await migrate()
 
 
 const app_calc_usage_time = () => {
