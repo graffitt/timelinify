@@ -1,16 +1,17 @@
 {
     "name": "timelinify",
     "private": true,
-    "version": "1.2.0",
+    "version": "1.2.1",
     "author": "graffitt",
     "license": "MIT",
     "type": "commonjs",
     "scripts": {
         "tauri dev": "tauri dev",
         "tauri build": "tauri build",
-        "change_version": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./change_version.ps1",
-        "renormalize": "git add --renormalize .",
+        "change version": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./change_version.ps1",
         "clean": "cd src-tauri && cargo clean -v",
+        "clean release": "cd src-tauri && cargo clean -r -v",
+        "renormalize": "git add --renormalize .",
         "tauri": "tauri"
     },
     "devDependencies": {

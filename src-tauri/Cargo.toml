@@ -1,6 +1,6 @@
 [package]
 name = "timelinify"
-version = "1.2.0"
+version = "1.2.1"
 description = "timelinify"
 authors = ["graffitt"]
 license = "MIT"
