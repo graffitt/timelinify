@@ -6,7 +6,7 @@ use regex::Regex;
 /// returns current windows accent color in hex
 ///
 /// default color - 0xffd77800 (4292311040) [src](https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup-themes-windowcolor#values)
-pub fn get_accent_color(include_aplha: bool) -> String{
+pub fn get_accent_color(alpha: bool) -> String{
     let hkcu = RegKey::predef(HKEY_CURRENT_USER);
     let path = "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Accent";
 
@@ -20,11 +20,11 @@ pub fn get_accent_color(include_aplha: bool) -> String{
 
     let color_hex: u32 = accent.get_value("AccentColorMenu").unwrap_or_else(|_| {default_color_dec});
 
-    return hex_to_color(format!("{:x}", color_hex), include_aplha)
+    return hex_to_color(format!("{:x}", color_hex), alpha)
 }
 /// ffd47800 -> #0078d4
-fn hex_to_color(mut color_hex: String, include_aplha: bool) -> String{
-    if !include_aplha {
+fn hex_to_color(mut color_hex: String, alpha: bool) -> String{
+    if !alpha {
         color_hex = color_hex.trim_start_matches(['f', 'F']).to_string()
     }
 

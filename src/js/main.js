@@ -20,7 +20,7 @@ let APPS_hash = 0
 
 let HISTORY = []
 
-const ACCENT_COLOR = await invoke('get_accent_color', {include_alpha: false})
+const ACCENT_COLOR = await invoke('get_accent_color', {alpha: false})
 
 const LAUNCHED_AS_ADMIN = await invoke('is_process_elevated')
 console.warn('launched as admin', LAUNCHED_AS_ADMIN)
