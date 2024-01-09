@@ -81,10 +81,12 @@ const app_delete = async (app_id, from = APPS.active) => {
 
     if(deletable_app_index > -1){
         if(await app_confirm_dialog(from[deletable_app_index], 1)){
+            const {icon} = from[deletable_app_index]
+
             from.splice(deletable_app_index, 1)// delete app from array
             $(`.app_card[data-id='${app_id}']`).remove()// delete UI element
             invoke('delete_icon', {
-                icon_name: app_id
+                icon_file_name: icon
             })// delete icon
 
             APPS_save()
