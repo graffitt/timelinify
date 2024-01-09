@@ -87,6 +87,11 @@ fn add_app_new() -> Option<String>{
 //         .unwrap( );
 // }
 
+#[tauri::command(rename_all = "snake_case")]
+fn blake3_export(input: String) -> String{
+    blake3::hash(input.as_bytes()).to_string()
+}
+
 // rust-analyzer type hints
 fn main(){
     println!("v{}", env!("CARGO_PKG_VERSION"));
@@ -99,6 +104,7 @@ fn main(){
             init_file_structure,
 
             add_app_new,
+            blake3_export,
             run_app,
 
             icon_file_exists,
