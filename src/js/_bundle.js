@@ -2,7 +2,6 @@
 //=require ./libs/jquery-3.7.0.min.js
 //require ./libs/ping.js
 //=require ./locale.js
-//=require ./migrate.js
 
 //--libs-------------------------------
 //=require ./libs/unix-to-hms.js
@@ -26,5 +25,6 @@
 //=require ./search.js
 //=require ./unfinished_session.js
 //=require ./main.js
+//=require ./migrate.js
 
 //require ./timeline.js

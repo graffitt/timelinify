@@ -49,6 +49,7 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
     // invoke('delete_unnecessary_icons', {
     //     existing_icons: id_list
     // })
+    migrate()
 
     APPS_hash = Sha256.hash(JSON.stringify(APPS, null, 2))
     console.warn('active hash', APPS_hash)
@@ -69,8 +70,6 @@ exists('.timelinify/history.json', file_options).then(result => {
         })
     }
 })
-await migrate()
-
 
 const app_calc_usage_time = () => {
     APPS.active.forEach(app => {
