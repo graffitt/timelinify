@@ -2,7 +2,7 @@ const add_app = async (app = {}) => {
     const {target_file} = app
     let {icon} = app
 
-    if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: icon})){
+    if(/*!icon.startsWith('http') &&*/ await invoke('icon_file_exists', {name: icon})){
         icon = convertFileSrc(ICON_PATH + icon)
     }
 
