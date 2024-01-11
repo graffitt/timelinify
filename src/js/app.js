@@ -14,7 +14,7 @@ const add_app_new = async (app = {}) => {
     const {id, name, target_file} = app
     let {icon} = app
 
-    if(!APPS.active.some(i => i.name === name)){
+    if(!APPS.active.some(i => i.id === id)){
         if(!icon.startsWith('http') && await invoke('icon_file_exists', {name: icon})){
             icon = convertFileSrc(ICON_PATH + icon)
         }
@@ -27,7 +27,7 @@ const add_app_new = async (app = {}) => {
         APPS_save()
     }
     else{
-        console.warn(`${name} already exists`)
+        console.warn(`app ${name} already exists`)
     }
 }
 
