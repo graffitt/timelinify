@@ -85,6 +85,9 @@ const app_calc_usage_time = () => {
         // }
     })
 }
+$('#settings').on('click', () => {
+    settings_tab()
+})
 
 $('#calc').on('click', () => {
     app_calc_usage_time()

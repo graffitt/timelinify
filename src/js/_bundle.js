@@ -21,8 +21,9 @@
 //=require ./app_methods.js
 //=require ./app_info_tab.js
 //=require ./app_edit_tab.js
-//=require ./last_session_dialog.js
+//=require ./settings_tab.js
 //=require ./search.js
+//=require ./last_session_dialog.js
 //=require ./unfinished_session.js
 //=require ./main.js
 //=require ./migrate.js
