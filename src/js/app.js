@@ -36,7 +36,6 @@ const add_app_ui_element = (app = {}, icon = '', require_admin = false) => {
 
     let app_run_button_icon = require_admin ? LAUNCHED_AS_ADMIN ? '▶' : '⚠️' : '▶'
 
-
     let app_card = /*html*/`
         <div class="app_card" data-id="${id}">
             <div class="app_icon_container app_inner_container">
