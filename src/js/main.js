@@ -44,7 +44,17 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
     console.warn('active', APPS)
 
     // let id_list = []
-    APPS.active.forEach(app => {add_app(app)/*, id_list.push(app.id)*/})
+    APPS.active.forEach(async (app, index) => {
+        await add_app(app)
+
+        if(index === APPS.active.length - 1){
+            $('#app_new').show()
+        }
+        // id_list.push(app.id)
+    })
+    if(APPS.active.length < 1){
+        $('#app_new').show()
+    }
     // console.warn('id list', id_list)
     // invoke('delete_unnecessary_icons', {
     //     existing_icons: id_list
