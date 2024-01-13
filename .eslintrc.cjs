@@ -79,7 +79,8 @@ module.exports = {
         'no-prototype-builtins': 'off',
         'space-infix-ops': 'warn',
         'no-inner-declarations': 'off',
-        'no-case-declarations': 'off'
+        'no-case-declarations': 'off',
+        'no-debugger': 'off'
     },
     // 'plugins': ['prettier'],
     'globals': {
