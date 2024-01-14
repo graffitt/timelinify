@@ -5,10 +5,6 @@ getVersion().then(version => {
 
 const ICON_PATH = `${await homeDir()}/.timelinify/icons/`
 
-// homeDir().then(dir => {
-//     ICON_PATH = `${dir}/.timelinify/icons/`
-// })
-
 const VERSIONS = {
     apps: 2
 }
@@ -16,7 +12,7 @@ let APPS = {
     version: VERSIONS.apps,
     active: []
 }
-let APPS_hash = 0
+let APPS_hash = ''
 
 let HISTORY = []
 
