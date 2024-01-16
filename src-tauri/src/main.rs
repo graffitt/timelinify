@@ -8,7 +8,7 @@ use serde::{Serialize, Deserialize};
 use blake3;
 
 pub mod init_fs;
-use init_fs::init_file_structure;
+use init_fs::*;
 
 pub mod iso8601;
 use iso8601::{DT_FORMAT/*, iso8601*/};
@@ -102,6 +102,8 @@ fn main(){
         .invoke_handler(tauri::generate_handler![
             // open_explorer,
             init_file_structure,
+            file_exist,
+            get_file_metadata,
 
             add_app_new,
             blake3_export,
