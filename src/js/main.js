@@ -65,7 +65,7 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
             console.warn('does not exist', response[0])
         }
     })
-    // console.warn(unfinished_session())
+    unfinished_session(APPS)
 })
 
 exists('.timelinify/history.json', file_options).then(result => {
