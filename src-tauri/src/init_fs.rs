@@ -50,8 +50,8 @@ pub fn init_file_structure(){
 
     let templates = HashMap::from([
         ("settings.json", format!("{{\n  \"lang\": \"en\"\n}}")),
-        ("apps.json", format!("{{\n  \"version\": 1,\n  \"active\": []\n}}")),
-        ("apps.bak", format!("{{\n  \"version\": 1,\n  \"active\": []\n}}")),
+        ("apps.json", format!("{{\n  \"version\": 2,\n  \"active\": []\n}}")),
+        ("apps.bak", format!("{{\n  \"version\": 2,\n  \"active\": []\n}}")),
         ("history.json", format!("[]")),
     ]);
 

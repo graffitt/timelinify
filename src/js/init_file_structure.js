@@ -1,7 +1,7 @@
 const file_options = {dir: BaseDirectory.Home, recursive: true}
 
 const apps_template = {
-    version: 1,
+    version: 2,
     active: []
 }
 const init_file_structure = (startup = false) => {
