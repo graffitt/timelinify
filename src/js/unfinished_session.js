@@ -2,14 +2,13 @@ const unfinished_session = async (apps_array) => {
     let file = '.timelinify/_unfinished.json'
 
     if(await invoke('file_exist', {path: '_unfinished.json'})){
-        let session = JSON.parse(await readTextFile(file, file_options))
-        let {start, end} = session
+        let {id, start, end} = JSON.parse(await readTextFile(file, file_options))
 
         end = JSON.parse(await invoke('get_file_metadata', {path: '_unfinished.json'})).modified
         end = to_iso_string(new Date(new Date(end) - 2_000))// 2_000 = 5000(file writing delay) / 2
 
-        let app = apps_array.find(app => app.id === session.id)
-        if(!app.sessions.some(ses => ses.start === session.start)){
+        let app = apps_array.find(app => app.id === id)
+        if(!app.sessions.some(ses => ses.start === start)){
             app.sessions.push({start, end})
             APPS_save()
             calc_usage_time_app(app)
