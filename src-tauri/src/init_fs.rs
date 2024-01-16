@@ -1,7 +1,39 @@
 use std::collections::HashMap;
-use std::fs::{create_dir, write};
+use std::fs::{create_dir, write, metadata};
 use std::path::PathBuf;
 use dirs_next;
+
+use crate::iso8601::iso8601;
+
+#[tauri::command(rename_all = "snake_case")]
+/// in js use slash or double backslash
+pub fn file_exist(path: String) -> bool{
+    let abs_path = PathBuf::from(dirs_next::home_dir().unwrap()).join(".timelinify").join(path);
+
+    if abs_path.exists(){
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+#[tauri::command(rename_all = "snake_case")]
+/// in js use slash or double backslash
+pub fn get_file_metadata(path: String) -> String{
+    let abs_path = PathBuf::from(dirs_next::home_dir().unwrap()).join(".timelinify").join(path);
+
+    if abs_path.exists(){
+        return String::from(format!("{{\"created\":\"{0}\",\"modified\":\"{1}\",\"accessed\":\"{2}\"}}",
+            iso8601(&metadata(&abs_path).unwrap().created().unwrap()),
+            iso8601(&metadata(&abs_path).unwrap().modified().unwrap()),
+            iso8601(&metadata(&abs_path).unwrap().accessed().unwrap())
+        ))
+    }
+    else {
+        return String::from(format!("{{\"created\":\"null\",\"modified\":\"null\",\"accessed\":\"null\"}}"))
+    }
+}
 
 #[tauri::command(rename_all = "snake_case")]
 pub fn init_file_structure(){
