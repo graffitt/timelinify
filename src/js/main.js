@@ -65,7 +65,7 @@ readTextFile('.timelinify/apps.json', file_options).then(result => {
             console.warn('does not exist', response[0])
         }
     })
-    unfinished_session(APPS)
+    unfinished_session(APPS.active)
 })
 
 exists('.timelinify/history.json', file_options).then(result => {
@@ -77,26 +77,12 @@ exists('.timelinify/history.json', file_options).then(result => {
     }
 })
 
-const app_calc_usage_time = () => {
-    APPS.active.forEach(app => {
-        console.log(app.name)
-        // if(app.sessions.length > 0){
-        let temp = 0
-        app.sessions.forEach(session => {
-            temp += (new Date(session.end) - new Date(session.start)) / 1000
-        })
-        app.usage_time_s = temp
-        $(`.app_card[data-id='${app.id}']`).find('.app_usage_time').text(unix_to_hms(app.usage_time_s, 0, false))
-        console.error(unix_to_hms(app.usage_time_s, 0, false))
-        // }
-    })
-}
 $('#settings').on('click', () => {
     settings_tab()
 })
 
 $('#calc').on('click', () => {
-    app_calc_usage_time()
+    calc_usage_time_all()
     APPS_save()
     // appWindow.setSize(new PhysicalSize(774, 600))
 })

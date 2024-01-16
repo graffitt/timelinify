@@ -24,6 +24,7 @@
 //=require ./settings_tab.js
 //=require ./search.js
 //=require ./last_session_dialog.js
+//=require ./calc_usage_time.js
 //=require ./unfinished_session.js
 //=require ./main.js
 //=require ./migrate.js
