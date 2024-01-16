@@ -10,8 +10,8 @@ const unfinished_session = async (apps_array) => {
         let app = apps_array.find(app => app.id === id)
         if(!app.sessions.some(ses => ses.start === start)){
             app.sessions.push({start, end})
+            calc_usage_time_id(id, APPS.active)
             APPS_save()
-            calc_usage_time_app(app)
         }
         removeFile(file, file_options)
 
