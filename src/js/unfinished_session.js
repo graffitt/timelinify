@@ -17,8 +17,5 @@ const unfinished_session = async (apps_array) => {
         removeFile(file, file_options)
 
         console.warn('unfinished_session', session)
-        // return session
     }
 }
-
-// console.warn('unfinished_session', await unfinished_session())
